@@ -202,3 +202,33 @@ body {
 .login-footer a:hover {
     text-decoration: underline;
 }
+
+.name-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+@media (max-width: 480px) {
+    .name-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
+
+@keyframes expandFromCenter {
+    from {
+        -webkit-clip-path: circle(0% at 50% 50%);
+        clip-path: circle(0% at 50% 50%);
+    }
+    to {
+        -webkit-clip-path: circle(150% at 50% 50%);
+        clip-path: circle(150% at 50% 50%);
+    }
+}
+
+.main-content {
+    -webkit-clip-path: circle(0% at 50% 50%);
+    clip-path: circle(0% at 50% 50%);
+    animation: expandFromCenter 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
