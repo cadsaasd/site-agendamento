@@ -69,49 +69,51 @@ body {
     margin-bottom: 0.5rem;
 }
 
+.login-header p{   
+    color: var(--primary-200);
+}
+
 .form-group {
     margin-bottom: 1.5rem;
     position: relative;
 }
 
+.form-group label {
+     display: block;
+    margin: 0 0 0.65rem 0.25rem;
+    color: var(--primary-300);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+
+.name-row .form-group {
+    margin-bottom: 0;
+}
+
 .input-content {
     width: 100%;
     position: relative;
-    border: 2px solid #a6859754;
+    border: 2px solid var(--primary-200);
     border-radius: 10px;
     background-color: transparent;
-    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .input-content input {
     width: 100%;
-    height: clamp(54px, 5vw, 62px);
-    padding: 1.4rem 3rem 0.5rem 0.9rem;
+    height: clamp(48px, 4.5vw, 56px);
+    padding: 0.9rem 3rem 0.5rem 0.9rem;
     border: none;
     border-radius: 10px;
     font-size: clamp(0.95rem, 1.1vw, 1.05rem);
     background: transparent;
     outline: none;
-    color: var(--primary-500);
+    color: var(--primary-300);
 }
 
 .input-content input::placeholder {
-    color: transparent;
-}
-
-.input-content label {
-    position: absolute;
-    left: 0.9rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--primary-200);
-    font-size: 1rem;
-    pointer-events: none;
-    transition: all 0.25s ease;
-    background-color: var(--primary-0);
-    padding: 0 0.35rem;
-    z-index: 2;
-    line-height: 1;
+    color: #a6859780;
+    opacity: 1;
 }
 
 .input-content i {
@@ -119,45 +121,9 @@ body {
     right: 12px;
     top: 50%;
     transform: translateY(-50%);
-    color: var(--primary-200);
+    color: var(--primary-300);
     pointer-events: none;
     font-size: 1rem;
-}
-
-.input-content input:focus+label,
-.input-content input:not(:placeholder-shown)+label {
-    top: -1px;
-    transform: translateY(-50%);
-    font-size: 0.75rem;
-    color: var(--primary-200);
-}
-
-.input-content input:-webkit-autofill,
-.input-content input:-webkit-autofill:hover,
-.input-content input:-webkit-autofill:focus {
-    -webkit-box-shadow: 0 0 0 1000px var(--primary-100) inset;
-    -webkit-text-fill-color: var(--primary-500);
-    border-radius: 10px;
-    transition: background-color 9999s ease-in-out 0s;
-}
-
-.forgot-password {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--primary-200);
-    text-decoration: none;
-    margin: 0;
-}
-
-.forgot-password:hover {
-    text-decoration: underline;
-}
-
-.middle-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.5rem;
 }
 
 .button-content {
@@ -253,4 +219,11 @@ body {
         height: 54px;
         font-size: 0.95rem;
     }
+}
+
+.name-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 0;
 }
