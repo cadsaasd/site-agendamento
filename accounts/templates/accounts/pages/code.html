@@ -1,0 +1,29 @@
+{% extends "accounts/base.html" %}
+{% load static %}
+{% block title %}Código WhatsApp |{% endblock title %}
+{% block content %}
+<main class="main-content">
+    <header class="login-header">
+        <h1>Digite o código</h1>
+        <p>Enviamos um código para o seu WhatsApp</p>
+    </header>
+
+    <form>
+        <div class="form-group">
+            <div class="input-content">
+                <input type="text" inputmode="numeric" maxlength="5" placeholder="0 0 0 0 0" aria-label="Código de verificação">
+                <i class="fa-solid fa-key"></i>
+            </div>
+        </div>
+
+        <div class="button-content">
+            <button type="submit">Confirmar código</button>
+        </div>
+    </form>
+
+    <div class="login-footer">
+        <p>Não recebeu o código?</p>
+        <a href="#">Reenviar código</a>
+    </div>
+</main>
+{% endblock content %}

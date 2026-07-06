@@ -176,23 +176,6 @@ body {
     text-decoration: underline;
 }
 
-.remember-me {
-    display: flex;
-    align-items: center;
-    gap: 0.45rem;
-    cursor: pointer;
-    color: var(--primary-300);
-    font-size: 0.85rem;
-    user-select: none;
-}
-
-.remember-me input[type="checkbox"] {
-    accent-color: var(--primary-300);
-    width: 15px;
-    height: 15px;
-    cursor: pointer;
-}
-
 @keyframes slideInRight {
     from { transform: translateX(80px); opacity: 0; }
     to   { transform: translateX(0);    opacity: 1; }
