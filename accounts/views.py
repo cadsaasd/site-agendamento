@@ -9,3 +9,6 @@ def login_view(request):
 
 def register_view(request):
     return render(request, 'accounts/pages/register.html')
+
+def code_view(request):
+    return render(request, 'accounts/pages/otp.html')

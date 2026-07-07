@@ -10,9 +10,11 @@
 
     <form>
         <div class="form-group">
-            <div class="input-content">
-                <input type="text" inputmode="numeric" maxlength="5" placeholder="0 0 0 0 0" aria-label="Código de verificação">
-                <i class="fa-solid fa-key"></i>
+            <div class= "otp-container">
+                <input type="text" class = 'otpInput' id = 'optInput1' inputmode="numeric" maxlength="1" placeholder="0" required>
+                <input type="text" class = 'otpInput' id = 'optInput2' inputmode="numeric" maxlength="1" placeholder="0" required>
+                <input type="text" class = 'otpInput' id = 'optInput3' inputmode="numeric" maxlength="1" placeholder="0" required>
+                <input type="text" class = 'otpInput' id = 'optInput4' inputmode="numeric" maxlength="1" placeholder="0" required>
             </div>
         </div>
 
@@ -21,7 +23,7 @@
         </div>
     </form>
 
-    <div class="login-footer">
+    <div class="footer-content">
         <p>Não recebeu o código?</p>
         <a href="#">Reenviar código</a>
     </div>

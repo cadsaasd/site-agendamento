@@ -55,7 +55,7 @@ body {
     box-shadow: 0 10px 40px var(--primary-200);
     position: relative;
     z-index: 10;
-    animation: slideInLeft 0.45s cubic-bezier(0.4, 0, 0.2, 1) both;
+    animation: slideInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) both;
 }
 
 .login-header {
@@ -99,6 +99,7 @@ body {
     background-color: transparent;
 }
 
+
 .input-content input {
     width: 100%;
     height: clamp(48px, 4.5vw, 56px);
@@ -112,7 +113,7 @@ body {
 }
 
 .input-content input::placeholder {
-    color: #a6859780;
+    color: #a68597cb;
     opacity: 1;
 }
 
@@ -152,27 +153,42 @@ body {
     transform: translateY(0);
 }
 
-.login-footer {
+.otp-container{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.otpInput{
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    border: 2px solid var(--primary-200);
     text-align: center;
-    margin-top: 1.5rem;
+    font-size: 1.8rem;
     color: var(--primary-300);
-    font-size: 0.85rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
+    background: transparent;
+    transition: 0.6s;
+    outline: none;
+}
+.otpInput::placeholder{
+    color: #a68597cb;
 }
 
-.login-footer p{
-    padding-top: 10px;
+.footer-content{
+    font-size: 0.8rem;
+    padding: 1rem;
+    text-align: center;
+    color: var(--primary-300);
 }
 
-.login-footer a {
-    color: var(--primary-200);
+.footer-content a{
     text-decoration: none;
-    font-weight: 600;
+    color: var(--primary-300);
 }
 
-.login-footer a:hover {
+.footer-content a:hover{
     text-decoration: underline;
 }
 
@@ -184,6 +200,11 @@ body {
 @keyframes slideInLeft {
     from { transform: translateX(-80px); opacity: 0; }
     to   { transform: translateX(0);     opacity: 1; }
+}
+
+@keyframes slideInUp {
+    from { transform: translateY(80px); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
 }
 
 @media (max-width: 480px) {
