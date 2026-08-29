@@ -1,0 +1,44 @@
+:root {
+    --primary-0: #fff9fb;
+    --primary-100: #f7d9e5;
+    --primary-200: #d9a9bc;
+    --primary-300: #73455d;
+    --primary-400: #4a2a3b;
+    --off-white: #fff;
+    --shadow-soft: rgba(115, 69, 93, 0.18);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, var(--primary-200) 0%, var(--primary-100) 45%, var(--primary-100) 100%);
+    color: var(--primary-400);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+main {
+    display: block;
+}
