@@ -1,11 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Ola</h1>
-</body>
-</html>
+{% extends "global/base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
+{% endblock extra_css %}
+
+{% block title %}Agendamentos{% endblock title %}
+
+{% block content %}
+    {% include "main/partials/header.html" %}
+    <main>
+        <section>
+        <div>
+            <h1>Beleza em cada detalhe</h1>
+            <h2>Cuide das suas unhas com carinho, técnica e atenção aos detalhes. Oferecemos serviços personalizados
+                para deixar suas mãos ainda mais bonitas, com um atendimento pensado para você se sentir especial em
+                cada momento.</h2>
+            <button>Agendar horário</button>
+            <button>Ver serviços</button>
+        </div>
+    </section>
+        {% include "main/partials/carousel.html" %}
+    <section>
+        
+    </section>
+</main>
+<footer>
+
+</footer>
+{% endblock content %}
