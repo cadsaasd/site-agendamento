@@ -1,6 +1,11 @@
-{% extends "accounts/base.html" %}
+{% extends "global/base.html" %}
 {% load static %}
-{% block title %}Código WhatsApp |{% endblock title %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'accounts/css/styles.css' %}">
+{% endblock extra_css %}
+
+{% block title %}Código WhatsApp{% endblock title %}
 {% block content %}
 <main class="main-content">
     <header class="login-header">
