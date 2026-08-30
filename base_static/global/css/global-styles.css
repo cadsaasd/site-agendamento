@@ -4,8 +4,11 @@
     --primary-200: #d9a9bc;
     --primary-300: #73455d;
     --primary-400: #4a2a3b;
-    --off-white: #fff;
+    --primary-500: #3a202e;
+    --off-white: #efe7e5;
     --shadow-soft: rgba(115, 69, 93, 0.18);
+    --font-heading: "Roboto Slab", serif;
+    --font-body: "Lato", sans-serif;
 }
 
 * {
@@ -16,11 +19,18 @@ html {
     scroll-behavior: smooth;
 }
 
+html,
+body {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
-    min-height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(135deg, var(--primary-200) 0%, var(--primary-100) 45%, var(--primary-100) 100%);
+    padding: 0;
+    min-height: 100vh;  
+    background: linear-gradient(135deg, var(--primary-200),var(--primary-100), var(--off-white),var(--primary-100), var(--primary-200) 100%);    font-family: "Roboto Slab", serif;
+    font-family: "Roboto Slab", serif;
+    font-weight: 300;
     color: var(--primary-400);
 }
 
