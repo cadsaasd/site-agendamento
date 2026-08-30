@@ -1,0 +1,18 @@
+<section id="services" class="services">
+    <div class="container">
+
+        <div class="services-header">
+            <h2>Serviços</h2>
+            <p>Conheça as soluções que oferecemos.</p>
+        </div>
+
+        <div class="services-grid">
+
+            {% for service in services %}
+                {% include "main/partials/service_card.html" with service=service %}
+            {% endfor %}
+
+        </div>
+
+    </div>
+</section>

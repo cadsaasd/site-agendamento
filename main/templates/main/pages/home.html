@@ -1,4 +1,5 @@
 {% extends "global/base.html" %}
+
 {% load static %}
 
 {% block extra_css %}
@@ -8,24 +9,18 @@
 {% block title %}Agendamentos{% endblock title %}
 
 {% block content %}
-    {% include "main/partials/header.html" %}
-    <main>
-        <section>
-        <div>
-            <h1>Beleza em cada detalhe</h1>
-            <h2>Cuide das suas unhas com carinho, técnica e atenção aos detalhes. Oferecemos serviços personalizados
-                para deixar suas mãos ainda mais bonitas, com um atendimento pensado para você se sentir especial em
-                cada momento.</h2>
-            <button>Agendar horário</button>
-            <button>Ver serviços</button>
-        </div>
-    </section>
-        {% include "main/partials/carousel.html" %}
-    <section>
-        
-    </section>
-</main>
-<footer>
 
-</footer>
+    {% include "main/partials/header.html" %}
+
+    <main>
+
+        {% include "main/partials/hero.html" %}
+        {% include "main/partials/carousel.html" %}
+        {% include "main/partials/services.html" %}
+        {% include "main/partials/appointment.html" %}
+    </main>
+
+    <footer class="footer-content">
+    </footer>
+
 {% endblock content %}
