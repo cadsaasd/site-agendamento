@@ -126,40 +126,22 @@ body {
    Botão
    ============================== */
 
-.button-content {
+.btn-content {
     margin-top: 2rem;
 }
 
-.button-content button {
+.btn {
     width: 100%;
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
     padding: clamp(0.75rem, 1vw, 0.95rem);
     color: var(--off-white);
     background: var(--primary-300);
-    border: 1.5px solid var(--primary-400);
-    border-radius: 18px;
-    font-family: var(--font-body);
-    font-size: clamp(1rem, 1.4vw, 1.2rem);
-    font-weight: 500;
-    text-decoration: none;
-    white-space: nowrap;
-    transition: all 250ms ease;
 }
 
-.button-content button:hover {
+.btn:hover{
     color: var(--off-white);
     background: #a3718b;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transform: translateY(-1px);
 }
-
-.button-content button:active {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-    transform: translateY(0);
-}
-
 
 /* ==============================
    OTP

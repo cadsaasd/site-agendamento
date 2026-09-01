@@ -132,27 +132,6 @@
 .btn {
     width: clamp(140px, 15vw, 250px);
     height: clamp(40px, 5vw, 60px);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border: 1.5px solid var(--primary-300);
-    border-radius: 18px;
-    font-family: var(--font-body);
-    font-size: clamp(1rem, 1.4vw, 1.2rem);
-    font-weight: 500;
-    text-decoration: none;
-    white-space: nowrap;
-    transition: all 250ms ease;
-}
-
-.btn:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transform: translateY(-1px);
-}
-
-.btn:active {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-    transform: translateY(0);
 }
 
 .btn-primary {
@@ -161,8 +140,7 @@
 }
 
 .btn-primary:hover {
-    color: var(--primary-300);
-    background-color: transparent;
+    background: #a3718b;
 }
 
 .btn-secondary {
