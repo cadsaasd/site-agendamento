@@ -1,340 +1,354 @@
-main {
-margin: 0 auto;
-}
-
-/* Header */
+/* ==============================
+   Header
+   ============================== */
 
 .header-content,
-.footer-content {
-width: 100%;
-height: 10rem;
-border: 1.5px solid var(--primary-400);
-background-color: #bd95a965;
-backdrop-filter: blur(10px);
+.main-footer {
+    width: 100%;
+    height: 10rem;
+    border: 1.5px solid var(--primary-400);
+    background-color: #bd95a965;
+    backdrop-filter: blur(10px);
 }
 
 .nav-content {
-height: 100%;
-display: flex;
-align-items: center;
-justify-content: flex-end;
-gap: clamp(1.5rem, 3vw, 3.5rem);
-padding: 0 clamp(2rem, 8vw, 28rem);
-box-sizing: border-box;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: clamp(1.5rem, 3vw, 3.5rem);
+    padding: 0 clamp(2rem, 8vw, 28rem);
 }
 
 .nav-content a {
-font-size: clamp(1rem, 1.4vw, 1.25rem);
-position: relative;
-color: var(--primary-300);
-text-decoration: none;
-padding: 0.25rem 0.35rem;
-white-space: nowrap;
+    position: relative;
+    padding: 0.25rem 0.35rem;
+    color: var(--primary-300);
+    font-size: clamp(1rem, 1.4vw, 1.25rem);
+    text-decoration: none;
+    white-space: nowrap;
 }
 
 .nav-content a::after {
-content: "";
-position: absolute;
-left: 0;
-bottom: -5px;
-width: 0;
-height: 1.5px;
-background-color: var(--primary-300);
-transition: width 0.2s ease;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 1.5px;
+    background-color: var(--primary-300);
+    transition: width 0.2s ease;
 }
 
 .nav-content a:hover::after {
-width: 100%;
+    width: 100%;
 }
 
 .profile-button {
-border: none;
-background: none;
-color: var(--primary-300);
-cursor: pointer;
-font-size: clamp(1.8rem, 3vw, 2.5rem);
+    border: none;
+    background: none;
+    color: var(--primary-300);
+    cursor: pointer;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
 }
 
-/* Hero */
+
+/* ==============================
+   Hero
+   ============================== */
 
 .hero {
-padding: 3.5rem 0;
+    padding: 3.5rem 0;
 }
 
 .container {
-width: min(90%, 2000px);
-margin: 0 auto;
-padding: 0 1rem;
-box-sizing: border-box;
+    width: min(90%, 2000px);
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .hero .container {
-max-width: 2000px;
-min-height: 500px;
+    max-width: 2000px;
+    min-height: 500px;
 }
 
 .hero-inner {
-display: flex;
-align-items: center;
-justify-content: center;
-padding-bottom: 5rem;
-gap: clamp(3rem, 12vw, 20rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(3rem, 12vw, 20rem);
+    padding-bottom: 5rem;
 }
 
 .hero-text {
-flex: 0 1 550px;
+    flex: 0 1 550px;
 }
 
 .hero-text h1 {
-font-weight: 400;
-font-size: clamp(2rem, 4vw, 3rem);
-color: var(--primary-400);
-margin-bottom: 0.75rem;
+    margin-bottom: 0.75rem;
+    color: var(--primary-400);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
 }
 
 .hero-text .lead {
-font-family: var(--font-body);
-font-weight: 300;
-font-size: clamp(1rem, 1.8vw, 1.5rem);
-color: var(--primary-400);
-margin-bottom: 1.25rem;
+    margin-bottom: 1.25rem;
+    color: var(--primary-400);
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 1.8vw, 1.5rem);
+    font-weight: 300;
 }
 
 .hero-media {
-width: min(500px, 40vw);
-height: 400px;
-flex-shrink: 0;
-background-color: var(--primary-200);
-border-radius: 12px;
-overflow: hidden;
+    width: min(500px, 40vw);
+    height: 400px;
+    flex-shrink: 0;
+    overflow: hidden;
+    background-color: var(--primary-200);
+    border-radius: 12px;
 }
 
 .hero-media img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-border-radius: 12px;
-display: block;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
 }
 
-/* Botões */
+
+/* ==============================
+   Botões
+   ============================== */
 
 .hero-buttons {
-font-size: 1rem;
-font-weight: 350;
-display: flex;
-gap: 1rem;
-flex-wrap: wrap;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 1rem;
+    font-weight: 350;
 }
 
 .btn {
-width: clamp(140px, 15vw, 250px);
-height: clamp(40px, 5vw, 60px);
-border: 1.5px solid var(--primary-300);
-display: inline-flex;
-align-items: center;
-justify-content: center;
-border-radius: 18px;
-font-family: var(--font-body);
-font-weight: 500;
-font-size: clamp(1rem, 1.4vw, 1.2rem);
-text-decoration: none;
-white-space: nowrap;
-transition: all 250ms ease;
-box-sizing: border-box;
+    width: clamp(140px, 15vw, 250px);
+    height: clamp(40px, 5vw, 60px);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid var(--primary-300);
+    border-radius: 18px;
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 1.4vw, 1.2rem);
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 250ms ease;
 }
 
-.btn-primary {
-color: var(--off-white);
-background: var(--primary-300);
-}
-
-.btn-primary:hover {
-color: var(--primary-300);
-background-color: transparent;
-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-transform: translateY(-1px);
-}
-
-.btn-secondary {
-border: 1px solid var(--primary-300);
-color: var(--primary-300);
-background: transparent;
-}
-
-.btn-secondary:hover {
-color: var(--off-white);
-background: var(--primary-300);
-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-transform: translateY(-1px);
+.btn:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
 }
 
 .btn:active {
-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    transform: translateY(0);
 }
 
-/* Carrossel */
+.btn-primary {
+    color: var(--off-white);
+    background: var(--primary-300);
+}
+
+.btn-primary:hover {
+    color: var(--primary-300);
+    background-color: transparent;
+}
+
+.btn-secondary {
+    border: 1px solid var(--primary-300);
+    color: var(--primary-300);
+    background: transparent;
+}
+
+.btn-secondary:hover {
+    color: var(--off-white);
+    background: var(--primary-300);
+}
+
+
+/* ==============================
+   Carrossel
+   ============================== */
 
 .carousel {
-margin: 100px auto;
-width: 80%;
-background-color: transparent;
-overflow: hidden;
-position: relative;
--webkit-mask-image: linear-gradient(
-to right,
-transparent 0,
-rgba(0, 0, 0, 1) 24px,
-rgba(0, 0, 0, 1) calc(100% - 24px),
-transparent 100%
-);
-mask-image: linear-gradient(
-to right,
-transparent 0,
-rgba(0, 0, 0, 1) 24px,
-rgba(0, 0, 0, 1) calc(100% - 24px),
-transparent 100%
-);
+    width: 80%;
+    margin: 100px auto;
+    overflow: hidden;
+    position: relative;
+    background-color: transparent;
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0,
+        rgba(0, 0, 0, 1) 24px,
+        rgba(0, 0, 0, 1) calc(100% - 24px),
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to right,
+        transparent 0,
+        rgba(0, 0, 0, 1) 24px,
+        rgba(0, 0, 0, 1) calc(100% - 24px),
+        transparent 100%
+    );
 }
 
 .container-carousel {
-width: 100%;
-max-width: none;
-margin: 0;
-padding: 4rem 0;
-background-color: #bd95a965;
-backdrop-filter: blur(10px);
-border: 1.5px solid var(--primary-300);
-overflow: hidden;
-position: relative;
-box-sizing: border-box;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 4rem 0;
+    overflow: hidden;
+    position: relative;
+    background-color: #bd95a965;
+    border: 1.5px solid var(--primary-300);
+    backdrop-filter: blur(10px);
 }
 
 .carousel-title {
-text-align: center;
-color: var(--primary-300);
-font-size: clamp(2rem, 3vw, 3rem);
-font-weight: 400;
-margin: 0 0 2rem;
-padding: 0 1rem;
+    margin: 0 0 2rem;
+    padding: 0 1rem;
+    color: var(--primary-300);
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: 400;
+    text-align: center;
 }
 
 .carousel::-webkit-scrollbar {
-display: none;
+    display: none;
 }
 
 .track {
-display: flex;
-align-items: center;
-width: max-content;
-animation: spin 12s linear infinite;
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: spin 12s linear infinite;
 }
 
 .carousel:hover .track {
-animation-play-state: paused;
+    animation-play-state: paused;
 }
 
 .group {
-display: flex;
-align-items: center;
-gap: 1rem;
-flex-shrink: 0;
-padding-right: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
+    padding-right: 1rem;
 }
+
 
 /* Cards do carrossel */
 
 .card {
-flex: 0 0 250px;
-width: 220px;
-height: 350px;
-padding: 0;
-color: var(--primary-400);
-background-color: var(--primary-200);
-font-size: 3rem;
-border-radius: 18px;
-overflow: hidden;
-display: flex;
-align-items: center;
-justify-content: center;
+    width: 220px;
+    height: 350px;
+    flex: 0 0 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    overflow: hidden;
+    color: var(--primary-400);
+    background-color: var(--primary-200);
+    border-radius: 18px;
+    font-size: 3rem;
 }
 
 .card img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-display: block;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 @keyframes spin {
-from {
-transform: translateX(0);
-}
-to {
-transform: translateX(calc(-50% - 0.5rem));
-}
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-50% - 0.5rem));
+    }
 }
 
-/* Serviços */
+
+/* ==============================
+   Serviços
+   ============================== */
 
 .services {
-background-color: #73455dd0;
-border: 2px solid var(--primary-300);
-padding: 5rem 0;
+    padding: 5rem 0;
+    background-color: #73455dd0;
+    border: 2px solid var(--primary-300);
 }
 
 .services-header {
-text-align: center;
-margin-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
 }
 
 .services-header h2 {
-color: var(--primary-200);
-font-family: var(--font-heading);
-font-size: clamp(2rem, 3vw, 2.6rem);
-font-weight: 400;
-margin: 0 0 0.5rem;
+    margin: 0 0 0.5rem;
+    color: var(--primary-200);
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 3vw, 2.6rem);
+    font-weight: 400;
 }
 
 .services-header p {
-color: var(--primary-200);
-font-family: var(--font-body);
-font-size: 1.5rem;
-font-weight: 300;
-margin: 0;
+    margin: 0;
+    color: var(--primary-200);
+    font-family: var(--font-body);
+    font-size: 1.5rem;
+    font-weight: 300;
 }
 
 .services-grid {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-gap: 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
 }
+
 
 /* Card do serviço */
 
 .service-card {
     width: 200px;
     height: 300px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
     background: var(--primary-200);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease, z-index 0.3s ease;
     border-radius: 10px;
     box-shadow: 0px 0px 10px 3px var(--primary-400);
     font-size: 1.2rem;
     font-weight: 900;
     text-align: center;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-radius 0.3s ease,
+        z-index 0.3s ease;
 }
 
 .service-card:hover {
-    border-radius: 15px;
+    z-index: 10;
     cursor: pointer;
     transform: scale(1.12);
     background: var(--primary-200);
-    z-index: 10;
+    border-radius: 15px;
     box-shadow: 0px 0px 14px 6px rgba(0, 0, 0, 0.5);
 }
 
@@ -343,675 +357,669 @@ gap: 3rem;
 }
 
 .first-service-content {
-    height: 100%;
     width: 100%;
-    transition: all 0.4s;
+    height: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     opacity: 1;
-    border-radius: 15px;
     background-color: var(--primary-200);
+    border-radius: 15px;
     color: var(--primary-300);
+    transition: all 0.4s;
 }
 
 .service-card:hover .first-service-content {
-height: 0px;
-opacity: 0;
+    height: 0px;
+    opacity: 0;
 }
+
 
 /* Conteúdo secundário */
 
 .second-service-content {
-position: absolute;
-inset: 0;
-width: 100%;
-height: 100%;
-opacity: 0;
-visibility: hidden;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-gap: 0.8rem;
-padding: 1.2rem 1.2rem 1rem;
-text-align: center;
-transform: rotateY(180deg);
-backface-visibility: hidden;
-border-radius: 15px;
-transition: opacity 0.3s ease, visibility 0.3s ease;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 1.2rem 1.2rem 1rem;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    background-color: transparent;
+    border-radius: 15px;
+    text-align: center;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
 }
 
 .service-card:hover .second-service-content {
-opacity: 1;
-visibility: visible;
-transform: translateY(0) scale(1);
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0) scale(1);
 }
 
 .second-service-content h3 {
-width: 100%;
-margin: 0;
-font-size: 1rem;
-font-family: var(--font-heading);
-color: var(--primary-200);
-padding-bottom: 0.6rem;
-border-bottom: 1.5px solid var(--primary-200);
+    width: 100%;
+    margin: 0;
+    padding-bottom: 0.6rem;
+    color: var(--primary-200);
+    border-bottom: 1.5px solid var(--primary-200);
+    font-family: var(--font-heading);
+    font-size: 1rem;
 }
+
 
 /* Detalhes do serviço */
 
 .service-details {
-position: relative;
-width: 100%;
-margin-top: 0.2rem;
-display: grid;
-grid-template-columns: 1fr 1fr;
-align-items: center;
-font-size: 1rem;
-font-weight: 600;
-color: var(--primary-200);
+    width: 100%;
+    position: relative;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 0.2rem;
+    color: var(--primary-200);
+    font-size: 1rem;
+    font-weight: 600;
 }
 
 .service-price,
 .service-duration {
-display: flex;
-align-items: center;
-justify-content: center;
-min-width: 0;
-line-height: 1.2;
-white-space: nowrap;
-}
-
-.service-duration {
-border-left: 1.55px solid var(--primary-200);
-min-height: 22px;
-}
-
-.service-card:hover .second-service-content .service-details {
-opacity: 1;
-visibility: visible;
-}
-
-/* Agendamento */
-
-.appointment {
-width: 100%;
-padding: 6rem 0;
-background: transparent;
-}
-
-.appointment-header {
-text-align: center;
-margin-bottom: 3rem;
-}
-
-.appointment-header h2 {
-color: var(--primary-400);
-font-family: var(--font-heading);
-font-size: clamp(2rem, 3vw, 2.8rem);
-font-weight: 400;
-margin: 0 0 0.75rem;
-}
-
-.appointment-header p {
-color: var(--primary-400);
-font-family: var(--font-body);
-font-size: 1.2rem;
-font-weight: 300;
-margin: 0;
-}
-
-.appointment-container {
-width: min(90%, 1000px);
-min-height: 400px;
-margin: 0 auto;
-padding: 3rem;
-box-sizing: border-box;
-border: 1.5px solid var(--primary-400);
-border-radius: 18px;
-background-color: #bd95a965;
-backdrop-filter: blur(10px);
-display: flex;
-align-items: center;
-justify-content: center;
-}
-
-.appointment-content {
-max-width: 650px;
-text-align: center;
-color: var(--primary-300);
-}
-
-.appointment-content h3 {
-font-family: var(--font-heading);
-font-size: clamp(1.8rem, 3vw, 2.5rem);
-font-weight: 400;
-margin: 0 0 1rem;
-}
-
-.appointment-content p {
-font-family: var(--font-body);
-font-size: 1.2rem;
-font-weight: 300;
-line-height: 1.6;
-margin: 0 0 2rem;
-}
-
-.appointment-content .btn {
-width: 250px;
-}
-
-/* MEDIA QUERIES */
-
-@media (max-width: 1200px) {
-.nav-content {
-padding: 0 5rem;
-}
-
-
-.hero-inner {
-    gap: 5rem;
-}
-
-.hero-media {
-    width: 400px;
-}
-
-.hero-text {
-    flex: 0 1 450px;
-}
-
-.btn {
-    width: 210px;
-}
-
-.service-card {
-    width: 220px;
-    flex-basis: 220px;
-    height: 320px;
-}
-
-
-}
-
-@media (max-width: 1024px) {
-.header-content {
-height: auto;
-}
-
-
-.nav-content {
-    gap: 1rem;
-    justify-content: center;
-    width: 100%;
-    padding: 1rem;
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    box-sizing: border-box;
-    -webkit-overflow-scrolling: touch;
-}
-
-.nav-content a {
-    padding: 0.45rem 0.6rem;
-    font-size: 0.98rem;
-    display: inline-block;
-    flex: 0 0 auto;
-}
-
-.profile-button {
-    font-size: 30px;
-    flex: 0 0 auto;
-}
-
-.hero {
-    padding: 2.5rem 0;
-}
-
-.hero .container {
-    min-height: auto;
-}
-
-.hero-inner {
-    flex-direction: column;
-    text-align: left;
-    gap: 2rem;
-    padding-bottom: 2rem;
-}
-
-.hero-text {
-    flex: none;
-    width: 100%;
-}
-
-.hero-text h1 {
-    font-size: clamp(2rem, 8vw, 3rem);
-}
-
-.hero-text .lead {
-    font-size: 1rem;
-}
-
-.hero-media {
-    width: min(100%, 350px);
-    height: auto;
-    aspect-ratio: 1 / 1;
-}
-
-.hero-buttons {
     display: flex;
-    flex-direction: row;
+    align-items: center;
     justify-content: center;
-    flex-wrap: nowrap;
-    gap: 0.5rem;
-}
-
-.hero-buttons .btn {
-    flex: 1 1 0;
-    width: 0;
     min-width: 0;
-    height: 60px;
-    font-size: 1rem;
-}
-
-.carousel {
-    width: 100%;
-    margin: 40px auto;
-    -webkit-mask-image: linear-gradient(
-        to right,
-        transparent 0,
-        rgba(0, 0, 0, 1) 10px,
-        rgba(0, 0, 0, 1) calc(100% - 10px),
-        transparent 100%
-    );
-    mask-image: linear-gradient(
-        to right,
-        transparent 0,
-        rgba(0, 0, 0, 1) 10px,
-        rgba(0, 0, 0, 1) calc(100% - 10px),
-        transparent 100%
-    );
-}
-
-.container-carousel {
-    padding: 2rem 0;
-}
-
-.carousel-title {
-    font-size: clamp(2rem, 8vw, 2.5rem);
-    margin-bottom: 1.5rem;
-}
-
-.group {
-    gap: 0.6rem;
-    padding-right: 0.6rem;
-}
-
-.card {
-    flex: 0 0 clamp(145px, 42vw, 180px);
-    width: clamp(145px, 42vw, 180px);
-    height: clamp(215px, 60vw, 270px);
-    border-radius: 12px;
-    font-size: 2rem;
-}
-
-.track {
-    animation-duration: 14s;
-}
-
-.services {
-    padding: 4rem 0;
-}
-
-.services-grid {
-    gap: 1rem;
-}
-
-.service-card {
-    width: 220px;
-    flex-basis: 220px;
-    height: auto;
-    min-height: 220px;
-    display: flex;
-    flex-direction: column;
-}
-
-.service-card:hover {
-    border-radius: 10px;
-    cursor: default;
-    transform: none;
-    background: var(--primary-200);
-    z-index: 1;
-    box-shadow: 0px 0px 10px 3px var(--primary-400);
-}
-
-.first-service-content {
-    position: static;
-    flex: 0 0 auto;
-    width: 100%;
-    height: auto;
-    min-height: 3rem;
-    padding: 0.75rem 0.5rem;
-    opacity: 1;
-    background-color: var(--primary-200);
-    color: var(--primary-300);
-    border-radius: 15px 15px 0 0;
-    border-bottom: 1px solid var(--primary-400);
-    font-size: 1.05rem;
-    text-align: center;
-}
-
-.service-card:hover .first-service-content {
-    height: auto;
-    opacity: 1;
-}
-
-.second-service-content {
-    position: static;
-    flex: 1 1 auto;
-    min-height: 0;
-    width: 100%;
-    opacity: 1;
-    visibility: visible;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 0.8rem;
-    transform: none;
-    background-color: var(--primary-300);
-    color: var(--primary-200);
-    border-radius: 0 0 15px 15px;
-    padding: 1rem 1rem 1.1rem;
-    font-size: 1rem;
-}
-
-.service-card:hover .second-service-content {
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-}
-
-.second-service-content h3 {
-    display: block;
-    font-family: var(--font-body);
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 1.45;
-    color: var(--primary-200);
-    padding-bottom: 0;
-    border-bottom: none;
-    margin: 0;
-    width: 100%;
-}
-
-.service-details {
-    margin-top: 0;
-    padding-top: 0;
-    font-size: 0.95rem;
-}
-
-.appointment {
-    padding: 4rem 0;
-}
-
-.appointment-header {
-    margin-bottom: 2rem;
-}
-
-.appointment-header p {
-    font-size: 1rem;
-}
-
-.appointment-container {
-    width: 90%;
-    min-height: 350px;
-    padding: 2rem 1.5rem;
-    border-radius: 15px;
-}
-
-.appointment-content h3 {
-    font-size: 1.8rem;
-}
-
-.appointment-content p {
-    font-size: 1rem;
-}
-
-.appointment-content .btn {
-    width: 100%;
-    max-width: 250px;
-}
-
-
-}
-
-@media (max-width: 600px) {
-.services {
-padding: 3.5rem 0;
-}
-
-
-.services-header {
-    margin-bottom: 2rem;
-}
-
-.services-header h2 {
-    font-size: 2.5rem;
-}
-
-.services-header p {
-    font-size: 1rem;
-}
-
-.services-grid {
-    gap: 1rem;
-}
-
-.service-card {
-    width: calc(50% - 0.75rem);
-    flex-basis: calc(50% - 0.75rem);
-    height: auto;
-    min-height: 180px;
-}
-
-.first-service-content {
-    padding: 0.6rem 0.4rem;
-    font-size: 1rem;
-    min-height: 2.6rem;
-}
-
-.second-service-content {
-    font-size: 1rem;
-    padding: 0.85rem 0.8rem 0.9rem;
-}
-
-.second-service-content h3 {
-    display: none;
-    font-size: 1rem;
-    margin: 0;
-}
-
-.service-details {
-    font-size: 0.95rem;
-    margin-top: 0;
-}
-
-.service-duration,
-.service-price {
-    font-size: 0.9rem;
-}
-
-.appointment {
-    padding: 3.5rem 1rem;
-}
-
-.appointment .container {
-    width: 100%;
-    padding: 0;
-}
-
-.appointment-content {
-    width: 100%;
-    padding: 1.5rem;
-    box-sizing: border-box;
-}
-
-.appointment-content h2 {
-    font-size: 2rem;
-}
-
-.appointment-content p {
-    font-size: 1rem;
-}
-
-.appointment-form {
-    width: 100%;
-}
-
-.appointment-form input,
-.appointment-form select,
-.appointment-form button {
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.appointment-content .btn {
-    width: 170px;
-}
-
-
-}
-
-@media (max-width: 500px) {
-.nav-content {
-gap: 0.5rem;
-}
-
-
-.hero {
-    padding: 2rem 0;
-}
-
-.hero-inner {
-    gap: 1.5rem;
-}
-
-.hero-buttons {
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 0.5rem;
-}
-
-.hero-buttons .btn {
-    width: 50%;
-    height: 60px;
-    font-size: 0.9rem;
-}
-
-.container-carousel {
-    padding: 1.5rem 0;
-}
-
-.carousel-title {
-    font-size: 1.8rem;
-    margin-bottom: 1.25rem;
-}
-
-.card {
-    flex-basis: 140px;
-    width: 140px;
-    height: 205px;
-}
-
-.service-card {
-    height: auto;
-    min-height: 170px;
-}
-
-.first-service-content {
-    font-size: 0.98rem;
-    min-height: 2.4rem;
-}
-
-.second-service-content {
-    font-size: 0.98rem;
-    padding: 0.7rem 0.7rem 0.8rem;
-}
-
-.second-service-content h3 {
-    display: none;
-    font-size: 0.9rem;
-    margin: 0;
-}
-
-/* Detalhes do serviço em coluna */
-
-.service-details {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0;
-    margin-top: 0;
-}
-
-.service-price,
-.service-duration {
-    width: 100%;
-    min-width: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    box-sizing: border-box;
-}
-
-.service-price {
-    padding: 0 0 0.4rem;
+    line-height: 1.2;
+    white-space: nowrap;
 }
 
 .service-duration {
     min-height: 22px;
-    padding: 0.4rem 0 0;
-    border-left: none;
-    border-top: 1.55px solid var(--primary-200);
+    border-left: 1.55px solid var(--primary-200);
 }
 
+.service-card:hover .second-service-content .service-details {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* ==============================
+   Agendamento
+   ============================== */
+
 .appointment {
-    padding: 3.5rem 0;
+    width: 100%;
+    padding: 6rem 0;
+    background: transparent;
+}
+
+.appointment-header {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.appointment-header h2 {
+    margin: 0 0 0.75rem;
+    color: var(--primary-400);
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 400;
+}
+
+.appointment-header p {
+    margin: 0;
+    color: var(--primary-400);
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    font-weight: 300;
 }
 
 .appointment-container {
-    padding: 2rem 1rem;
+    width: min(90%, 1000px);
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 3rem;
+    background-color: #bd95a965;
+    border: 1.5px solid var(--primary-400);
+    border-radius: 18px;
+    backdrop-filter: blur(10px);
+}
+
+.appointment-content {
+    max-width: 650px;
+    color: var(--primary-300);
+    text-align: center;
 }
 
 .appointment-content h3 {
-    font-size: 1.6rem;
+    margin: 0 0 1rem;
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 400;
 }
 
 .appointment-content p {
-    font-size: 0.95rem;
+    margin: 0 0 2rem;
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.6;
 }
 
 .appointment-content .btn {
-    width: 170px;
+    width: 250px;
 }
 
 
+/* ==============================
+   Media Queries
+   ============================== */
+
+@media (max-width: 1200px) {
+    .nav-content {
+        padding: 0 5rem;
+    }
+
+    .hero-inner {
+        gap: 5rem;
+    }
+
+    .hero-media {
+        width: 400px;
+    }
+
+    .hero-text {
+        flex: 0 1 450px;
+    }
+
+    .btn {
+        width: 210px;
+    }
+
+    .service-card {
+        width: 220px;
+        height: 320px;
+        flex-basis: 220px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .header-content {
+        height: auto;
+    }
+
+    .nav-content {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1rem;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .nav-content a {
+        display: inline-block;
+        flex: 0 0 auto;
+        padding: 0.45rem 0.6rem;
+        font-size: 0.98rem;
+    }
+
+    .profile-button {
+        flex: 0 0 auto;
+        font-size: 30px;
+    }
+
+    .hero {
+        padding: 2.5rem 0;
+    }
+
+    .hero .container {
+        min-height: auto;
+    }
+
+    .hero-inner {
+        flex-direction: column;
+        gap: 2rem;
+        padding-bottom: 2rem;
+        text-align: left;
+    }
+
+    .hero-text {
+        width: 100%;
+        flex: none;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+
+    .hero-text .lead {
+        font-size: 1rem;
+    }
+
+    .hero-media {
+        width: min(100%, 350px);
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    .hero-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        flex-wrap: nowrap;
+    }
+
+    .hero-buttons .btn {
+        width: 0;
+        min-width: 0;
+        height: 60px;
+        flex: 1 1 0;
+        font-size: 1rem;
+    }
+
+    .carousel {
+        width: 100%;
+        margin: 40px auto;
+        -webkit-mask-image: linear-gradient(
+            to right,
+            transparent 0,
+            rgba(0, 0, 0, 1) 10px,
+            rgba(0, 0, 0, 1) calc(100% - 10px),
+            transparent 100%
+        );
+        mask-image: linear-gradient(
+            to right,
+            transparent 0,
+            rgba(0, 0, 0, 1) 10px,
+            rgba(0, 0, 0, 1) calc(100% - 10px),
+            transparent 100%
+        );
+    }
+
+    .container-carousel {
+        padding: 2rem 0;
+    }
+
+    .carousel-title {
+        margin-bottom: 1.5rem;
+        font-size: clamp(2rem, 8vw, 2.5rem);
+    }
+
+    .group {
+        gap: 0.6rem;
+        padding-right: 0.6rem;
+    }
+
+    .card {
+        width: clamp(145px, 42vw, 180px);
+        height: clamp(215px, 60vw, 270px);
+        flex: 0 0 clamp(145px, 42vw, 180px);
+        border-radius: 12px;
+        font-size: 2rem;
+    }
+
+    .track {
+        animation-duration: 14s;
+    }
+
+    .services {
+        padding: 4rem 0;
+    }
+
+    .services-grid {
+        gap: 1rem;
+    }
+
+    .service-card {
+        width: 220px;
+        min-height: 220px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        flex-basis: 220px;
+    }
+
+    .service-card:hover {
+        z-index: 1;
+        cursor: default;
+        transform: none;
+        background: var(--primary-200);
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px 3px var(--primary-400);
+    }
+
+    .first-service-content {
+        width: 100%;
+        min-height: 3rem;
+        height: auto;
+        flex: 0 0 auto;
+        position: static;
+        padding: 0.75rem 0.5rem;
+        opacity: 1;
+        background-color: var(--primary-200);
+        border-radius: 15px 15px 0 0;
+        border-bottom: 1px solid var(--primary-400);
+        color: var(--primary-300);
+        font-size: 1.05rem;
+        text-align: center;
+    }
+
+    .service-card:hover .first-service-content {
+        height: auto;
+        opacity: 1;
+    }
+
+    .second-service-content {
+        width: 100%;
+        min-height: 0;
+        height: 100%;
+        display: flex;
+        flex: 1 1 auto;
+        position: static;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0.8rem;
+        padding: 1rem 1rem 1.1rem;
+        visibility: visible;
+        opacity: 1;
+        background-color: var(--primary-300);
+        border-radius: 0 0 15px 15px;
+        color: var(--primary-200);
+        font-size: 1rem;
+        transform: none;
+    }
+
+    .service-card:hover .second-service-content {
+        visibility: visible;
+        opacity: 1;
+        transform: none;
+    }
+
+    .second-service-content h3 {
+        width: 100%;
+        display: block;
+        margin: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+        color: var(--primary-200);
+        font-family: var(--font-body);
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.45;
+    }
+
+    .service-details {
+        margin-top: 0;
+        padding-top: 0;
+        font-size: 0.95rem;
+    }
+
+    .appointment {
+        padding: 4rem 0;
+    }
+
+    .appointment-header {
+        margin-bottom: 2rem;
+    }
+
+    .appointment-header p {
+        font-size: 1rem;
+    }
+
+    .appointment-container {
+        width: 90%;
+        min-height: 350px;
+        padding: 2rem 1.5rem;
+        border-radius: 15px;
+    }
+
+    .appointment-content h3 {
+        font-size: 1.8rem;
+    }
+
+    .appointment-content p {
+        font-size: 1rem;
+    }
+
+    .appointment-content .btn {
+        width: 100%;
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 600px) {
+    .services {
+        padding: 3.5rem 0;
+    }
+
+    .services-header {
+        margin-bottom: 2rem;
+    }
+
+    .services-header h2 {
+        font-size: 2.5rem;
+    }
+
+    .services-header p {
+        font-size: 1rem;
+    }
+
+    .services-grid {
+        gap: 1rem;
+    }
+
+    .service-card {
+        width: calc(50% - 0.75rem);
+        min-height: 180px;
+        height: auto;
+        flex-basis: calc(50% - 0.75rem);
+    }
+
+    .first-service-content {
+        min-height: 2.6rem;
+        padding: 0.6rem 0.4rem;
+        font-size: 1rem;
+    }
+
+    .second-service-content {
+        padding: 0.85rem 0.8rem;
+        font-size: 1rem;
+    }
+
+    .second-service-content h3 {
+        display: none;
+        margin: 0;
+        font-size: 1rem;
+    }
+
+    .service-details {
+        margin-top: 0;
+        font-size: 0.95rem;
+    }
+
+    .service-duration,
+    .service-price {
+        font-size: 0.9rem;
+    }
+
+    .appointment {
+        padding: 3.5rem 1rem;
+    }
+
+    .appointment .container {
+        width: 100%;
+        padding: 0;
+    }
+
+    .appointment-content {
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    .appointment-content h2 {
+        font-size: 2rem;
+    }
+
+    .appointment-content p {
+        font-size: 1rem;
+    }
+
+    .appointment-form {
+        width: 100%;
+    }
+
+    .appointment-form input,
+    .appointment-form select,
+    .appointment-form button {
+        width: 100%;
+    }
+
+    .appointment-content .btn {
+        width: 170px;
+    }
+}
+
+@media (max-width: 500px) {
+    .nav-content {
+        gap: 0.5rem;
+    }
+
+    .hero {
+        padding: 2rem 0;
+    }
+
+    .hero-inner {
+        gap: 1.5rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        gap: 0.5rem;
+        flex-wrap: nowrap;
+        flex-direction: row;
+    }
+
+    .hero-buttons .btn {
+        width: 50%;
+        height: 60px;
+        font-size: 0.9rem;
+    }
+
+    .container-carousel {
+        padding: 1.5rem 0;
+    }
+
+    .carousel-title {
+        margin-bottom: 1.25rem;
+        font-size: 1.8rem;
+    }
+
+    .card {
+        width: 140px;
+        height: 205px;
+        flex-basis: 140px;
+    }
+
+    .service-card {
+        min-height: 170px;
+        height: auto;
+    }
+
+    .first-service-content {
+        min-height: 2.4rem;
+        font-size: 0.98rem;
+    }
+
+    .second-service-content {
+        padding: 0.7rem 0.7rem 0.8rem;
+        font-size: 0.98rem;
+    }
+
+    .second-service-content h3 {
+        display: none;
+        margin: 0;
+        font-size: 0.9rem;
+    }
+
+    /* Detalhes do serviço em coluna */
+
+    .service-details {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+        margin-top: 0;
+        flex-direction: column;
+    }
+
+    .service-price,
+    .service-duration {
+        width: 100%;
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .service-price {
+        padding: 0 0 0.4rem;
+    }
+
+    .service-duration {
+        min-height: 22px;
+        padding: 0.4rem 0 0;
+        border-top: 1.55px solid var(--primary-200);
+        border-left: none;
+    }
+
+    .appointment {
+        padding: 3.5rem 0;
+    }
+
+    .appointment-container {
+        padding: 2rem 1rem;
+    }
+
+    .appointment-content h3 {
+        font-size: 1.6rem;
+    }
+
+    .appointment-content p {
+        font-size: 0.95rem;
+    }
+
+    .appointment-content .btn {
+        width: 170px;
+    }
 }
 
 @media (max-width: 350px) {
-.service-details {
-font-size: 0.85rem;
-}
+    .service-details {
+        font-size: 0.85rem;
+    }
 
-
-.service-duration,
-.service-price {
-    font-size: 0.8rem;
-}
-
-
+    .service-duration,
+    .service-price {
+        font-size: 0.8rem;
+    }
 }
