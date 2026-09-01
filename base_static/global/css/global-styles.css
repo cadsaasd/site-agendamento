@@ -7,6 +7,7 @@
     --primary-500: #3a202e;
     --off-white: #efe7e5;
     --shadow-soft: rgba(115, 69, 93, 0.18);
+
     --font-heading: "Roboto Slab", serif;
     --font-body: "Lato", sans-serif;
 }
@@ -19,36 +20,28 @@ html {
     scroll-behavior: smooth;
 }
 
-html,
-body {
-    scroll-behavior: smooth;
-}
-
 body {
     margin: 0;
     padding: 0;
-    min-height: 100vh;  
-    background: linear-gradient(135deg, var(--primary-200),var(--primary-100), var(--off-white),var(--primary-100), var(--primary-200) 100%);    font-family: "Roboto Slab", serif;
-    font-family: "Roboto Slab", serif;
+    min-height: 100vh;
+    background: linear-gradient(
+        135deg,
+        var(--primary-200),
+        var(--primary-100),
+        var(--off-white),
+        var(--primary-100),
+        var(--primary-200)
+    );
     font-weight: 300;
     color: var(--primary-400);
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
 }
 
-img {
-    max-width: 100%;
-    display: block;
-}
-
-button,
-input {
-    font: inherit;
-}
-
-main {
-    display: block;
-}
