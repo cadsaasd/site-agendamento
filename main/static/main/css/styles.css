@@ -608,6 +608,8 @@
 @media (max-width: 1024px) {
     .main-footer {
         height: auto;
+        min-height: 6rem;
+        padding: 1.25rem 0;
     }
 
     .hero {
