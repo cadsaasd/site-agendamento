@@ -75,13 +75,14 @@
     transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 
 .dropdown-menu a {
     text-decoration: none;
     font-family: var(--font-body);
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 400;
     color: var(--primary-300);
     display: block;
@@ -92,11 +93,27 @@
     text-decoration: underline;
 }
 
-.dropdown-links {
-    margin-top: 3rem;
+.dropdown-menu .btn{
+    width: 100%;
+    height: auto;
+    font-size: 15px;
+    color: var(--off-white);
+    background-color: var(--primary-300);
+}
+
+.dropdown-menu .btn:hover{
+    width: 100%;
+    height: auto;
+    color: var(--off-white);
+    background-color: #a3718b;
+}
+
+.dropdown-content {
+    align-items: center;
+    margin-top: 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 3rem;
 }
 
 .dropdown > .profile-button:focus + .dropdown-menu {
@@ -1058,4 +1075,14 @@
     .service-price {
         font-size: 0.8rem;
     }
+}
+
+html,
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.header-content {
+    margin-top: 0 !important;
 }
