@@ -12,12 +12,22 @@
     --font-body: "Lato", sans-serif;
 }
 
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;    
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 body {
