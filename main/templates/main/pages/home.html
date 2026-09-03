@@ -24,8 +24,15 @@
         {% include "main/partials/carousel.html" %}
         {% include "main/partials/services.html" %}
         {% include "main/partials/appointment.html" %}
+
     </main>
 
     {% include "main/partials/footer.html" %}
 
 {% endblock content %}
+
+{% block extra_js %}
+
+    <script src="{% static 'main/js/services.js' %}"></script>
+    
+{% endblock extra_js %}
