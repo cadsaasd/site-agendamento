@@ -28,7 +28,7 @@
     overflow: hidden;
     position: relative;
     background-color: #bd95a965;
-    border: 1.5px solid var(--primary-300);
+    border-top: 1.5px solid var(--primary-300);
     backdrop-filter: blur(10px);
 }
 
