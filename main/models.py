@@ -17,3 +17,13 @@ class Services(models.Model):
             return f"{hours}h"
         else:
             return f"{minutes}min"
+
+class LandingImages(models.Model):
+    class Section(models.TextChoices):
+        HERO = "hero", "Hero"
+        CAROUSEL = 'carousel', "Carrossel"
+
+    image = models.ImageField(upload_to="landing/")
+    section = models.CharField(max_length=10, choices=Section.choices)
+    order = models.PositiveIntegerField(default=0)
+    is_active = models.BooleanField(default=False)
