@@ -1,17 +1,25 @@
 <article class="service-card">
-    <div class="card-inner">
-        <!-- frente do card -->
-        <div class="first-service-content">
-            <h3>{{service.name}}</h3>
+
+    <div class="service-card-content">
+
+        <h3>{{ service.name }}</h3>
+
+        <p class="service-description">
+            {{ service.description }}
+        </p>
+
+        <div class="service-details">
+
+            <span class="service-price">
+                R${{ service.price }}
+            </span>
+
+            <span class="service-duration">
+                {{ service.format_duration }}
+            </span>
+
         </div>
 
-        <!-- verso do card -->
-        <div class="second-service-content">
-            <h3>{{service.description}}</h3>  
-            <div class="service-details">
-                <span class="service-price">R${{service.price}}</span>
-                <span class="service-duration">{{service.format_duration}}</span>
-            </div>
-        </div>
     </div>
+
 </article>
