@@ -1,0 +1,511 @@
+@media (max-width: 1200px) {
+    .nav-content {
+        padding: 0 clamp(1rem, 6vw, 5rem);
+    }
+
+    .hero-inner {
+        gap: 5rem;
+    }
+
+    .hero-media {
+        width: 400px;
+    }
+
+    .hero-text {
+        flex: 0 1 450px;
+    }
+
+    .btn {
+        width: 210px;
+    }
+
+    .service-card {
+        width: 220px;
+        height: 320px;
+        flex-basis: 220px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .main-footer {
+        height: auto;
+        min-height: 6rem;
+        padding: 1.25rem 0;
+    }
+
+    .hero {
+        padding: 2.5rem 0;
+    }
+
+    .hero .container {
+        min-height: auto;
+    }
+
+    .hero-inner {
+        flex-direction: column;
+        gap: 2rem;
+        padding-bottom: 2rem;
+        text-align: left;
+    }
+
+    .hero-text {
+        width: 100%;
+        flex: none;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+
+    .hero-text .lead {
+        font-size: 1rem;
+    }
+
+    .hero-media {
+        width: min(100%, 350px);
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    .hero-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        flex-wrap: nowrap;
+    }
+
+    .hero-buttons .btn {
+        width: 0;
+        min-width: 0;
+        height: 60px;
+        flex: 1 1 0;
+        font-size: 1rem;
+    }
+
+    .carousel {
+        width: 100%;
+        margin: 40px auto;
+        -webkit-mask-image: linear-gradient(
+            to right,
+            transparent 0,
+            rgba(0, 0, 0, 1) 10px,
+            rgba(0, 0, 0, 1) calc(100% - 10px),
+            transparent 100%
+        );
+        mask-image: linear-gradient(
+            to right,
+            transparent 0,
+            rgba(0, 0, 0, 1) 10px,
+            rgba(0, 0, 0, 1) calc(100% - 10px),
+            transparent 100%
+        );
+    }
+
+    .container-carousel {
+        padding: 2rem 0;
+    }
+
+    .carousel-title {
+        margin-bottom: 1.5rem;
+        font-size: clamp(2rem, 8vw, 2.5rem);
+    }
+
+    .group {
+        gap: 0.6rem;
+        padding-right: 0.6rem;
+    }
+
+    .card {
+        width: clamp(145px, 42vw, 180px);
+        height: clamp(215px, 60vw, 270px);
+        flex: 0 0 clamp(145px, 42vw, 180px);
+        border-radius: 12px;
+        font-size: 2rem;
+    }
+
+    .track {
+        animation-duration: 14s;
+    }
+
+    .services {
+        padding: 4rem 0;
+    }
+
+    .services-grid {
+        gap: 1rem;
+    }
+
+    .service-card {
+        width: 220px;
+        min-height: 220px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        flex-basis: 220px;
+    }
+
+    .service-card:hover {
+        z-index: 1;
+        cursor: default;
+        transform: none;
+        background: var(--primary-200);
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px 3px var(--primary-400);
+    }
+
+    .first-service-content {
+        width: 100%;
+        min-height: 3rem;
+        height: auto;
+        flex: 0 0 auto;
+        position: static;
+        padding: 0.75rem 0.5rem;
+        opacity: 1;
+        background-color: var(--primary-200);
+        border-radius: 15px 15px 0 0;
+        border-bottom: 1px solid var(--primary-400);
+        color: var(--primary-300);
+        font-size: 1.05rem;
+        text-align: center;
+    }
+
+    .service-card:hover .first-service-content {
+        height: auto;
+        opacity: 1;
+    }
+
+    .second-service-content {
+        width: 100%;
+        min-height: 0;
+        height: 100%;
+        display: flex;
+        flex: 1 1 auto;
+        position: static;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0.8rem;
+        padding: 1rem 1rem 1.1rem;
+        visibility: visible;
+        opacity: 1;
+        background-color: var(--primary-300);
+        border-radius: 0 0 15px 15px;
+        color: var(--primary-200);
+        font-size: 1rem;
+        transform: none;
+    }
+
+    .service-card:hover .second-service-content {
+        visibility: visible;
+        opacity: 1;
+        transform: none;
+    }
+
+    .second-service-content h3 {
+        width: 100%;
+        display: block;
+        margin: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+        color: var(--primary-200);
+        font-family: var(--font-body);
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.45;
+    }
+
+    .service-details {
+        margin-top: 0;
+        padding-top: 0;
+        font-size: 0.95rem;
+    }
+
+    .appointment {
+        padding: 4rem 0;
+    }
+
+    .appointment-header {
+        margin-bottom: 2rem;
+    }
+
+    .appointment-header p {
+        font-size: 1rem;
+    }
+
+    .appointment-container {
+        width: 90%;
+        min-height: 350px;
+        padding: 2rem 1.5rem;
+        border-radius: 15px;
+    }
+
+    .appointment-content h3 {
+        font-size: 1.8rem;
+    }
+
+    .appointment-content p {
+        font-size: 1rem;
+    }
+
+    .appointment-content .btn {
+        width: 100%;
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 600px) {
+    .services {
+        padding: 3.5rem 0;
+    }
+
+    .services-header {
+        margin-bottom: 2rem;
+    }
+
+    .services-header h2 {
+        font-size: 2.5rem;
+    }
+
+    .services-header p {
+        font-size: 1rem;
+    }
+
+    .services-grid {
+        gap: 1rem;
+    }
+
+    .service-card {
+        width: calc(50% - 0.75rem);
+        min-height: 180px;
+        height: auto;
+        flex-basis: calc(50% - 0.75rem);
+    }
+
+    .first-service-content {
+        min-height: 2.6rem;
+        padding: 0.6rem 0.4rem;
+        font-size: 1rem;
+    }
+
+    .second-service-content {
+        padding: 0.85rem 0.8rem;
+        font-size: 1rem;
+    }
+
+    .second-service-content h3 {
+        display: none;
+        margin: 0;
+        font-size: 1rem;
+    }
+
+    .service-details {
+        margin-top: 0;
+        font-size: 0.95rem;
+    }
+
+    .service-duration,
+    .service-price {
+        font-size: 0.9rem;
+    }
+
+    .appointment {
+        padding: 3.5rem 1rem;
+    }
+
+    .appointment .container {
+        width: 100%;
+        padding: 0;
+    }
+
+    .appointment-content {
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    .appointment-content h2 {
+        font-size: 2rem;
+    }
+
+    .appointment-content p {
+        font-size: 1rem;
+    }
+
+    .appointment-form {
+        width: 100%;
+    }
+
+    .appointment-form input,
+    .appointment-form select,
+    .appointment-form button {
+        width: 100%;
+    }
+
+    .appointment-content .btn {
+        width: 170px;
+    }
+}
+
+@media (max-width: 599px) {
+    .header-content {
+        height: auto;
+    }
+
+    .nav-content {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .nav-content a {
+        display: inline-block;
+        flex: 0 0 auto;
+        padding: 0.45rem 0.6rem;
+        font-size: 0.98rem;
+    }
+
+    .profile-button {
+        flex: 0 0 auto;
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    .nav-content {
+        gap: 0.5rem;
+    }
+
+    .hero {
+        padding: 2rem 0;
+    }
+
+    .hero-inner {
+        gap: 1.5rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        gap: 0.5rem;
+        flex-wrap: nowrap;
+        flex-direction: row;
+    }
+
+    .hero-buttons .btn {
+        width: 50%;
+        height: 60px;
+        font-size: 0.9rem;
+    }
+
+    .container-carousel {
+        padding: 1.5rem 0;
+    }
+
+    .carousel-title {
+        margin-bottom: 1.25rem;
+        font-size: 1.8rem;
+    }
+
+    .card {
+        width: 140px;
+        height: 205px;
+        flex-basis: 140px;
+    }
+
+    .service-card {
+        min-height: 170px;
+        height: auto;
+    }
+
+    .first-service-content {
+        min-height: 2.4rem;
+        font-size: 0.98rem;
+    }
+
+    .second-service-content {
+        padding: 0.7rem 0.7rem 0.8rem;
+        font-size: 0.98rem;
+    }
+
+    .second-service-content h3 {
+        display: none;
+        margin: 0;
+        font-size: 0.9rem;
+    }
+
+    /* Detalhes do serviço em coluna */
+
+    .service-details {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+        margin-top: 0;
+        flex-direction: column;
+    }
+
+    .service-price,
+    .service-duration {
+        width: 100%;
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .service-price {
+        padding: 0 0 0.4rem;
+    }
+
+    .service-duration {
+        min-height: 22px;
+        padding: 0.4rem 0 0;
+        border-top: 1.55px solid var(--primary-200);
+        border-left: none;
+    }
+
+    .appointment {
+        padding: 3.5rem 0;
+    }
+
+    .appointment-container {
+        padding: 2rem 1rem;
+    }
+
+    .appointment-content h3 {
+        font-size: 1.6rem;
+    }
+
+    .appointment-content p {
+        font-size: 0.95rem;
+    }
+
+    .appointment-content .btn {
+        width: 170px;
+    }
+}
+
+@media (max-width: 350px) {
+    .service-details {
+        font-size: 0.85rem;
+    }
+
+    .service-duration,
+    .service-price {
+        font-size: 0.8rem;
+    }
+}
+
+html,
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.header-content {
+    margin-top: 0 !important;
+}

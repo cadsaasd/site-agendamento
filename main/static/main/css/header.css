@@ -1,0 +1,118 @@
+.header-content{
+    width: 100%;
+    height: 10rem;
+    border: 1.5px solid var(--primary-400);
+    background-color: #bd95a965;
+    backdrop-filter: blur(10px);
+}
+
+.nav-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: clamp(1.5rem, 3vw, 3.5rem);
+    padding: 0 clamp(2rem, 8vw, 28rem);
+}
+
+.nav-content > a {
+    position: relative;
+    padding: 0.25rem 0.35rem;
+    color: var(--primary-300);
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-size: clamp(1rem, 1.4vw, 1.25rem);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.nav-content > a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 1.5px;
+    background-color: var(--primary-300);
+    transition: width 0.2s ease;
+}
+
+.nav-content a:hover::after {
+    width: 100%;
+}
+
+.profile-button {
+    border: none;
+    background: none;
+    color: var(--primary-300);
+    cursor: pointer;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.dropdown{
+    position: relative;
+}
+
+.dropdown-menu{
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    right: 0;
+    top: calc(100% + .25rem);
+    background-color: var(--primary-200);
+    padding: .75rem;
+    border: 1.5px solid var(--primary-400);
+    border-radius: 18px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.dropdown-menu a {
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--primary-300);
+    display: block;
+}
+
+.dropdown-menu a:hover {
+    color: var(--primary-400);
+    text-decoration: underline;
+}
+
+.dropdown-menu .btn{
+    width: 100%;
+    height: auto;
+    font-size: 15px;
+    color: var(--off-white);
+    background-color: var(--primary-300);
+}
+
+.dropdown-menu .btn:hover{
+    width: 100%;
+    height: auto;
+    color: var(--off-white);
+    background-color: #a3718b;
+}
+
+.dropdown-content {
+    align-items: center;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.dropdown > .profile-button:focus + .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}

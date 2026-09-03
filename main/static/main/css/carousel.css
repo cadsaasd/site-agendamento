@@ -1,0 +1,89 @@
+.carousel {
+    width: 80%;
+    margin: 100px auto;
+    overflow: hidden;
+    position: relative;
+    background-color: transparent;
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0,
+        rgba(0, 0, 0, 1) 24px,
+        rgba(0, 0, 0, 1) calc(100% - 24px),
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to right,
+        transparent 0,
+        rgba(0, 0, 0, 1) 24px,
+        rgba(0, 0, 0, 1) calc(100% - 24px),
+        transparent 100%
+    );
+}
+
+.container-carousel {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 4rem 0;
+    overflow: hidden;
+    position: relative;
+    background-color: #bd95a965;
+    border: 1.5px solid var(--primary-300);
+    backdrop-filter: blur(10px);
+}
+
+.carousel-title {
+    margin: 0 0 2rem;
+    padding: 0 1rem;
+    color: var(--primary-300);
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: 400;
+    text-align: center;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: spin 12s linear infinite;
+}
+
+.carousel:hover .track {
+    animation-play-state: paused;
+}
+
+.group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
+    padding-right: 1rem;
+}
+
+/* Cards do carrossel */
+
+.card {
+    width: 250px;
+    height: 350px;
+    flex: 0 0 250px;
+    display: block;
+    padding: 0;
+    overflow: hidden;
+    object-fit: cover;
+    background-color: var(--primary-200);
+    border-radius: 18px;
+}
+
+@keyframes spin {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-50% - 0.5rem));
+    }
+}
