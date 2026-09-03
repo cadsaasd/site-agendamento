@@ -1,4 +1,3 @@
-{% load static %}
 <section class="hero">
 
     <div class="container hero-inner">
@@ -24,10 +23,11 @@
         </div>
 
         <div class="hero-media">
-            <img
-                src="{% static 'main/img/placeholder-hero.jpg' %}"
-                alt="Beleza"
-            >
+            {% if hero_image %}
+            <img src="{{ hero_image.image.url}}"
+             alt="hero_image"
+            class="hero_image">
+            {% endif %}
         </div>
 
     </div>
