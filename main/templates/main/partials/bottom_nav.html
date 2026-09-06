@@ -1,0 +1,27 @@
+<nav class="bottom-nav">
+
+    <a href="#header" class="nav-item">
+        <span class="nav-text">Início</span>
+    </a>
+
+    <a href="#services" class="nav-item">
+        <span class="nav-text">Serviços</span>
+    </a>
+
+    <a href="#our-work" class="nav-item">
+        <span class="nav-text">Trabalhos</span>
+    </a>
+
+    <div class="nav-item profile-nav-item">
+        <div class="dropdown">
+
+            <button class="profile-nav-btn" type="button">
+                <i class="fa-sharp-duotone fa-solid fa-circle-user nav-icon"></i>
+            </button>
+
+            {% include "main/partials/profile_dropdown.html" %}
+
+        </div>
+    </div>
+
+</nav>
