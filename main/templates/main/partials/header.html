@@ -1,24 +1,22 @@
-<header class="header-content">
+{% load static %}
 
+<header id="header" class="header-content">
+    <div class="logo">
+        <img src="{% static "global/images/logo.png" %}" alt="logo">
+    </div>
     <nav class="nav-content">
 
         <a href="#services">Serviços</a>
         
         <a href="#our-work">Trabalhos</a>
 
-        
         <div class="dropdown">
             <button class="profile-button" type="button">
                 <i class="fa-sharp-duotone fa-solid fa-circle-user"></i>
             </button>   
                 
-            <div class="dropdown-menu">
-                <h3>Bem-vinda</h3>
-                <div class="dropdown-content">
-                    <a href=""><i class="fa-solid fa-clock-rotate-left"></i> Historico</a>
-                    <button class="btn" href=""><i class="fa-solid fa-right-from-bracket"></i> Sair</button>
-                </div>
-            </div>
+            {% include "main/partials/profile_dropdown.html" %}
+
         </div>
         
 
