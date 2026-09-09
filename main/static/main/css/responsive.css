@@ -344,6 +344,14 @@
         flex: 1;
         height: 100%;
     }
+    
+    .nav-text {
+        border-bottom: 1.5px solid transparent;
+        transition: border-color 0.25s ease;
+    }
+    .nav-item.active .nav-text {
+        border-bottom: 1.5px solid var(--off-white);
+    }
 
     .profile-nav-item {
         background: none;
