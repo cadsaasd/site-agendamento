@@ -21,9 +21,9 @@
 
                     {% for service in services %}
 
-                        {% if service.category.name == "nails" %}
+                        {% if service.category.slug == "nails" %}
 
-                            {% include "main/partials/service_card.html" with service=service %}
+                            {% include "main/partials/service_card.html"%}
 
                         {% endif %}        
 
@@ -37,9 +37,9 @@
 
                     {% for service in services %}
 
-                        {% if service.category.name == "lash_brow" %}
+                        {% if service.category.slug == "lash_brow" %}
 
-                            {% include "main/partials/service_card.html" with service=service %}
+                            {% include "main/partials/service_card.html"%}
 
                         {% endif %}         
 
