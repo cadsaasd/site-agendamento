@@ -34,8 +34,9 @@
 
 {% block extra_js %}
 
-    <script src="{% static 'main/js/services.js' %}"></script>
-    <script src="{% static 'main/js/bottom_nav.js' %}"></script>
-    <script src="{% static 'main/js/appointment_steps.js' %}"></script>
+    <script src="{% static 'main/js/services.js' %}" defer></script>
+    <script src="{% static 'main/js/bottom_nav.js' %}" defer></script>
+    <script src="{% static 'global/js/steps.js' %}" defer></script>
+    <script src="{% static 'main/js/appointment_steps.js' %}" defer></script>
 
 {% endblock extra_js %}

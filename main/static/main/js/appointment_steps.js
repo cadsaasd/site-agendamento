@@ -2,106 +2,91 @@ const categoryBtns = document.querySelectorAll('.category-btn')
 const serviceBtns = document.querySelectorAll('.appointment-service-btn')
 const steps = document.querySelectorAll('.step')
 const allSteps = document.querySelector('.steps')
-const appointmentSteps = document.querySelectorAll('.appointment-step')
 const nextBtns = document.querySelectorAll('.next-btn')
 const backBtns = document.querySelectorAll('.back-btn')
 const photoIndicator = document.querySelector('.photo-indicator')
 const lastStep = document.querySelector('.last-step')
 const lastLine = document.querySelector('.last-line')
+
+const appointment = createSteps('.appointment-step')
+
 let categoryId
-let currentStep = 0
 
 categoryBtns.forEach((button) => {
-button.addEventListener('click', () => {
-    categoryId = button.dataset.categoryId 
-    if (categoryId == 1){
-        photoIndicator.style.display = 'flex'
-        lastLine.style.display = 'flex'
-        lastStep.querySelector('span').innerText = '4'
-    }else{
-        photoIndicator.style.display = 'none'
-        lastLine.style.display = 'none'
-        lastStep.querySelector('span').innerText = '3'
-    }   
-    serviceBtns.forEach((serviceButton) => {
-        const serviceCategoryId = serviceButton.dataset.categoryId
-        
-        if (serviceCategoryId == categoryId) {
-           serviceButton.style.display = 'flex'
+    button.addEventListener('click', () => {
+        categoryId = button.dataset.categoryId
+
+        if (categoryId == 1) {
+            photoIndicator.style.display = 'flex'
+            lastLine.style.display = 'flex'
+            lastStep.querySelector('span').innerText = '4'
         } else {
-            serviceButton.style.display = 'none'
+            photoIndicator.style.display = 'none'
+            lastLine.style.display = 'none'
+            lastStep.querySelector('span').innerText = '3'
         }
 
+        serviceBtns.forEach((serviceButton) => {
+            const serviceCategoryId = serviceButton.dataset.categoryId
+
+            if (serviceCategoryId == categoryId) {
+                serviceButton.style.display = 'flex'
+            } else {
+                serviceButton.style.display = 'none'
+            }
+        })
+
+        nextStep()
     })
-    nextStep()
-})
 })
 
-function updateStepIndicator(){
-    
-    if(currentStep === 0){
+function updateStepIndicator() {
+    if (appointment.getCurrentStep() === 0) {
         allSteps.style.display = 'none'
-    }else{
+    } else {
         allSteps.style.display = 'flex'
-    }   
-    steps.forEach(indicatorStep => {
+    }
+
+    steps.forEach((indicatorStep) => {
         const indicatorStepNumber = Number(indicatorStep.dataset.step)
-        console.log(currentStep, indicatorStepNumber)
-        if(indicatorStepNumber === currentStep){
+
+        if (indicatorStepNumber === appointment.getCurrentStep()) {
             indicatorStep.classList.add('active')
-        }else{
+        } else {
             indicatorStep.classList.remove('active')
         }
-        
     })
 }
 
-function showStep(){
-    appointmentSteps.forEach(step =>{
-        const stepNumber = Number(step.dataset.step)
-        if(stepNumber === currentStep){
-            step.classList.add('active')
-        }else{
-            step.classList.remove('active')
-        }
-    })
-}
-
-function backStep(){
-    if(categoryId === "2" && currentStep === 4){
-        currentStep = 2
-    }else{
-        currentStep--
+function backStep() {
+    if (categoryId === "2" && appointment.getCurrentStep() === 4) {
+        appointment.goTo(2)
+    } else {
+        appointment.back()
     }
-    showStep()
+
     updateStepIndicator()
 }
 
-function nextStep(){
-    if(categoryId === "2" && currentStep === 2){
-        currentStep = 4
-    }else{
-        currentStep++
+function nextStep() {
+    if (categoryId === "2" && appointment.getCurrentStep() === 2) {
+        appointment.goTo(4)
+    } else {
+        appointment.next()
     }
 
-    console.log('DEPOIS:', currentStep)
-    showStep()
-    updateStepIndicator() 
-     
+    updateStepIndicator()
 }
 
 backBtns.forEach((button) => {
     button.addEventListener('click', () => {
         backStep()
-})
+    })
 })
 
 nextBtns.forEach((button) => {
     button.addEventListener('click', () => {
         nextStep()
+    })
 })
-})
-
-
-
 
