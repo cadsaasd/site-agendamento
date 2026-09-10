@@ -1,0 +1,60 @@
+<div class="appointment-step category-step active" data-step='0'>
+    <h3>Como podemos cuidar de você hoje?</h3>
+    <div class="category-buttons">
+        {% for category in categories %}
+            <button class="category-btn btn" data-category-id="{{ category.id }}">
+                {{category.name}}
+            </button>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="appointment-step service-step" data-step='1'>
+    <h3>Escolha o serviço</h3>
+    <p>Selecione o serviço que deseja realizar.</p>
+    <div class="services-btns">
+        {% for service in services %}
+        <button class="appointment-service-btn btn" data-category-id="{{ service.category.id }}">
+            {{ service.name }}
+        </button>
+        {% endfor %}
+    </div>
+    <div class="back-next-step-btn">
+        <button class="back-btn btn">
+            Voltar
+        </button>
+        <button class="next-btn btn">
+            Continuar
+        </button>
+    </div>
+</div>
+
+<div class="appointment-step date-step" data-step='2'>
+    <div class="back-next-step-btn">
+        <button class="back-btn btn">
+            Voltar
+        </button>
+        <button class="next-btn btn">
+            Continuar
+        </button>
+    </div>
+</div>
+
+<div class="appointment-step photo-step" data-step='3'>
+    <div class="back-next-step-btn">
+        <button class="back-btn btn">
+            Voltar
+        </button>
+        <button class="next-btn btn">
+            Continuar
+        </button>
+    </div>
+</div>
+
+<div class="appointment-step confirm-step" data-step='4'>
+    <div class="back-next-step-btn">
+        <button class="back-btn btn">
+            Voltar
+        </button>
+    </div>
+</div>

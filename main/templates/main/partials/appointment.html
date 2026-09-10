@@ -4,18 +4,40 @@
             <h2>Agende seu horário</h2>
             <p>Escolha o serviço, a data e o horário que preferir.</p>
         </div>
-
+        
         <div class="appointment-container">
-            <div class="appointment-content">
-                <h3>Pronta para cuidar de você?</h3>
-                <p>
-                    Selecione seu serviço e encontre o melhor horário
-                    disponível para o seu atendimento.
-                </p>
+            <div class="steps">
+                
+                <div class="step active" data-step='1'>
+                    <span>1</span>
+                    <p>Serviço</p>
+                </div>
 
-                <a href="#" class="btn btn-primary">
-                    Agendar meu horário
-                </a>
+                <div class="line"></div>
+
+                <div class="step" data-step='2'>
+                    <span>2</span>
+                    <p>Data/Horário</p>
+                </div>
+
+                <div class="line"></div>
+
+                <div class="step photo-indicator" data-step='3'>
+                    <span>3</span>
+                    <p>Foto</p>
+                </div>
+
+                <div class="line last-line"></div>
+                
+                <div class="step last-step" data-step='4'>
+                    <span>4</span>
+                    <p>Confirmar</p>
+                </div>
+
+            </div>
+
+            <div class="appointment-content">
+                {% include "main/partials/appointment_steps.html" %}
             </div>
         </div>
     </div>
