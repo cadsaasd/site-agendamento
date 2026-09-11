@@ -137,3 +137,15 @@ MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 STATIC_ROOT = BASE_DIR / 'static'
+
+# Development: avoid blocking scripts with an empty/lenient CSP
+# An empty mapping disables adding CSP headers via Django's CSP middleware.
+if DEBUG:
+    SECURE_CSP = {}
+    SECURE_CSP_REPORT_ONLY = {}
+else:
+    # In production, allow scripts from self (adjust as needed)
+    SECURE_CSP = {
+        'default-src': ["'self'"],
+        'script-src': ["'self'"],
+    }
