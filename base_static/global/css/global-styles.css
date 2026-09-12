@@ -55,6 +55,10 @@ h6 {
     font-family: var(--font-heading);
 }
 
+p{
+    font-family: var(--font-body);
+}
+
 .btn{
     display: inline-flex;
     align-items: center;
