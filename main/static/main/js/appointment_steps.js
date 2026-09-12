@@ -7,26 +7,36 @@ const backBtns = document.querySelectorAll('.back-btn')
 const photoIndicator = document.querySelector('.photo-indicator')
 const lastStep = document.querySelector('.last-step')
 const lastLine = document.querySelector('.last-line')
+const serviceName = document.querySelector('.service-name')
+const serviceStep = document.querySelector('.service-step')
+const serviceNextBtn = serviceStep ? serviceStep.querySelector('.next-btn') : null
+
+serviceNextBtn.style.display = 'none'
+
+
 
 const appointment = createSteps('.appointment-step')
 
 let categoryId
 
 categoryBtns.forEach((button) => {
+
     button.addEventListener('click', () => {
+
         categoryId = button.dataset.categoryId
 
-        if (categoryId == 1) {
-            photoIndicator.style.display = 'flex'
-            lastLine.style.display = 'flex'
-            lastStep.querySelector('span').innerText = '4'
+        if (categoryId != 2) {
+            if (photoIndicator) photoIndicator.style.display = 'flex'
+            if (lastLine) lastLine.style.display = 'flex'
+            if (lastStep && lastStep.querySelector('span')) lastStep.querySelector('span').innerText = '4'
         } else {
-            photoIndicator.style.display = 'none'
-            lastLine.style.display = 'none'
-            lastStep.querySelector('span').innerText = '3'
+            if (photoIndicator) photoIndicator.style.display = 'none'
+            if (lastLine) lastLine.style.display = 'none'
+            if (lastStep && lastStep.querySelector('span')) lastStep.querySelector('span').innerText = '3'
         }
 
         serviceBtns.forEach((serviceButton) => {
+
             const serviceCategoryId = serviceButton.dataset.categoryId
 
             if (serviceCategoryId == categoryId) {
@@ -34,13 +44,28 @@ categoryBtns.forEach((button) => {
             } else {
                 serviceButton.style.display = 'none'
             }
+
         })
 
         nextStep()
     })
+
+})
+
+serviceBtns.forEach((serviceButton) => {
+    serviceButton.addEventListener('click', () => {
+
+        const serviceId = serviceButton.dataset.serviceId
+        const name = serviceButton.textContent.trim()
+        
+        serviceName.textContent = name
+        serviceNextBtn.style.display = 'flex'
+    })
+
 })
 
 function updateStepIndicator() {
+
     if (appointment.getCurrentStep() === 0) {
         allSteps.style.display = 'none'
     } else {
@@ -48,6 +73,7 @@ function updateStepIndicator() {
     }
 
     steps.forEach((indicatorStep) => {
+
         const indicatorStepNumber = Number(indicatorStep.dataset.step)
 
         if (indicatorStepNumber === appointment.getCurrentStep()) {
@@ -55,10 +81,13 @@ function updateStepIndicator() {
         } else {
             indicatorStep.classList.remove('active')
         }
+
     })
+
 }
 
 function backStep() {
+    serviceNextBtn.style.display = 'none'
     if (categoryId === "2" && appointment.getCurrentStep() === 4) {
         appointment.goTo(2)
     } else {
@@ -68,7 +97,7 @@ function backStep() {
     updateStepIndicator()
 }
 
-function nextStep() {
+function nextStep() {   
     if (categoryId === "2" && appointment.getCurrentStep() === 2) {
         appointment.goTo(4)
     } else {
@@ -79,14 +108,17 @@ function nextStep() {
 }
 
 backBtns.forEach((button) => {
+
     button.addEventListener('click', () => {
         backStep()
     })
+
 })
 
 nextBtns.forEach((button) => {
+
     button.addEventListener('click', () => {
         nextStep()
     })
-})
 
+})

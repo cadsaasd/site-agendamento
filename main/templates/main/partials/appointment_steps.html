@@ -14,16 +14,18 @@
     <p>Selecione o serviço que deseja realizar.</p>
     <div class="services-btns">
         {% for service in services %}
-        <button class="appointment-service-btn btn" data-category-id="{{ service.category.id }}">
+        <button class="appointment-service-btn appointment-step-btn"
+         data-category-id="{{ service.category.id }}"
+         data-service-id="{{ service.id }}">
             {{ service.name }}
         </button>
         {% endfor %}
     </div>
     <div class="back-next-step-btn">
-        <button class="back-btn btn">
+        <button class="back-btn appointment-step-btn">
             Voltar
         </button>
-        <button class="next-btn btn">
+        <button class="next-btn appointment-step-btn">
             Continuar
         </button>
     </div>
@@ -31,10 +33,10 @@
 
 <div class="appointment-step date-step" data-step='2'>
     <div class="back-next-step-btn">
-        <button class="back-btn btn">
+        <button class="back-btn appointment-step-btn">
             Voltar
         </button>
-        <button class="next-btn btn">
+        <button class="next-btn appointment-step-btn">
             Continuar
         </button>
     </div>
@@ -42,10 +44,10 @@
 
 <div class="appointment-step photo-step" data-step='3'>
     <div class="back-next-step-btn">
-        <button class="back-btn btn">
+        <button class="back-btn appointment-step-btn">
             Voltar
         </button>
-        <button class="next-btn btn">
+        <button class="next-btn appointment-step-btn">
             Continuar
         </button>
     </div>
@@ -53,7 +55,10 @@
 
 <div class="appointment-step confirm-step" data-step='4'>
     <div class="back-next-step-btn">
-        <button class="back-btn btn">
+        <div class="comfirm-step-infos">
+            <p class="service-name"></p>           
+        </div>
+        <button class="back-btn appointment-step-btn">
             Voltar
         </button>
     </div>
