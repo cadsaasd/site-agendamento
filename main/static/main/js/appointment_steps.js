@@ -76,7 +76,7 @@ function updateStepIndicator() {
 
         const indicatorStepNumber = Number(indicatorStep.dataset.step)
 
-        if (indicatorStepNumber === appointment.getCurrentStep()) {
+        if (indicatorStepNumber <= appointment.getCurrentStep()) {
             indicatorStep.classList.add('active')
         } else {
             indicatorStep.classList.remove('active')

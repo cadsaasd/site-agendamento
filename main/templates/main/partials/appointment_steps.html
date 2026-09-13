@@ -32,14 +32,25 @@
 </div>
 
 <div class="appointment-step date-step" data-step='2'>
-    <div class="back-next-step-btn">
-        <button class="back-btn appointment-step-btn">
-            Voltar
-        </button>
-        <button class="next-btn appointment-step-btn">
-            Continuar
-        </button>
-    </div>
+    <div class="date-step-content">
+        <h3>Escolha a data</h3>
+        <div class="calendar-container">
+            <div class="date-input">
+                <input class="appointment-date-visible" type="text" id="appointment-date" placeholder="Selecione uma data">
+                <i class="fa-solid fa-calendar"></i>
+            </div>
+        </div>
+        <div class="time-slots-container">
+        </div>
+        <div class="back-next-step-btn">
+            <button class="back-btn appointment-step-btn" id="date-back-btn">
+                Voltar
+            </button>
+            <button class="next-btn appointment-step-btn" id="date-next-btn">
+                Continuar
+            </button>
+        </div>
+    </div> 
 </div>
 
 <div class="appointment-step photo-step" data-step='3'>
