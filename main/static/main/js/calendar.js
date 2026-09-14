@@ -10,10 +10,6 @@ tomorrow.setDate(tomorrow.getDate() + 1);
 const maxDate = new Date();
 maxDate.setDate(maxDate.getDate() + 31);
 
-backBtn.addEventListener("click", () => {
-    calendar.clear()
-})
-
 const calendar = flatpickr(dateInput, {
     inline: false,
     locale: "pt",
@@ -25,6 +21,7 @@ const calendar = flatpickr(dateInput, {
     disableMobile: true,
     monthSelectorType: "static",
     yearSelectorType: "static",
+    position: "above",
 
     onReady: function() {
         const yearInput = document.querySelector(
@@ -40,10 +37,14 @@ const calendar = flatpickr(dateInput, {
         if (selectedDates.length > 0) {
             dateNextBtn.style.display = "flex";
             timeContainer.style.display = "flex"
-
+   
         } else {
             dateNextBtn.style.display = "none";
             timeContainer.style.display = "none"
         }
     }
 });
+
+backBtn.addEventListener("click", () => {
+    calendar.clear()
+})
