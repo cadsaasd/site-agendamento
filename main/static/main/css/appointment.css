@@ -190,7 +190,8 @@ h3 {
 
 .back-next-step-btn {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 10rem;
     align-items: center;
     text-align: center;
     width: 100%;
@@ -214,7 +215,7 @@ h3 {
 .next-btn {
     background-color: #a3718b;
     color: var(--off-white);
-    animation: showNextBtn 0.3s ease;
+    animation: showNextBtn 0.4s ease;
 }
 
 @keyframes showNextBtn {
@@ -954,6 +955,7 @@ span.flatpickr-day.prevMonthDay.flatpickr-disabled {
         width: 100%;
         margin: 0;
         padding: 1.35rem 0 0;
+        gap: 3rem;
     }
 
     .back-next-step-btn button {

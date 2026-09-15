@@ -1,14 +1,46 @@
-const dateInput = document.querySelector("#appointment-date");
-const dateNextBtn = document.querySelector("#date-next-btn");
+const dateInput = document.querySelector("#appointment-date")
+const dateNextBtn = document.querySelector("#date-next-btn")
 const timeContainer = document.querySelector('.time-slots-container')
 const backBtn = document.querySelector('#date-back-btn')
-dateNextBtn.style.display = "none";
+
+dateNextBtn.style.display = "none"
 timeContainer.style.display = "none"
 
-const tomorrow = new Date();
-tomorrow.setDate(tomorrow.getDate() + 1);
-const maxDate = new Date();
-maxDate.setDate(maxDate.getDate() + 31);
+function setDateNextVisible(visible) {
+    if (!dateNextBtn) return
+
+    const isShown = dateNextBtn.style.display === 'flex'
+
+    if (isShown === visible) return
+
+    const firstRect = backBtn.getBoundingClientRect()
+
+    dateNextBtn.style.display = visible ? 'flex' : 'none'
+
+    void backBtn.offsetWidth
+
+    const lastRect = backBtn.getBoundingClientRect()
+    const deltaX = firstRect.left - lastRect.left
+
+    backBtn.style.transition = 'none'
+    backBtn.style.transform = `translateX(${deltaX}px)`
+
+    requestAnimationFrame(() => {
+        backBtn.style.transition = 'transform 0.25s cubic-bezier(0.4, 0, 0.2, 1)'
+        backBtn.style.transform = ''
+
+        backBtn.addEventListener('transitionend', function onEnd() {
+            backBtn.removeEventListener('transitionend', onEnd)
+            backBtn.style.transition = ''
+        })
+    })
+}
+
+const tomorrow = new Date()
+tomorrow.setDate(tomorrow.getDate() + 1)
+
+const maxDate = new Date()
+maxDate.setDate(maxDate.getDate() + 31)
 
 const calendar = flatpickr(dateInput, {
     inline: false,
@@ -26,24 +58,23 @@ const calendar = flatpickr(dateInput, {
     onReady: function() {
         const yearInput = document.querySelector(
             ".flatpickr-current-month .cur-year"
-        );
+        )
 
         if (yearInput) {
-            yearInput.setAttribute("readonly", true);
+            yearInput.setAttribute("readonly", true)
         }
     },
 
     onChange: function(selectedDates, dateStr) {
         if (selectedDates.length > 0) {
-            dateNextBtn.style.display = "flex";
+            setDateNextVisible(true)
             timeContainer.style.display = "flex"
-   
         } else {
-            dateNextBtn.style.display = "none";
+            setDateNextVisible(false)
             timeContainer.style.display = "none"
         }
     }
-});
+})
 
 backBtn.addEventListener("click", () => {
     calendar.clear()
