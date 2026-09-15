@@ -1,54 +1,42 @@
 <section id="services" class="services">
-    <div class="services-header">
-            <h2>Serviços</h2>
-            <p>Conheça as soluções que oferecemos.</p>
-        </div>
-    <div id="container" class="service-container">
-        <div class="tab-buttons">
-            <button class="tab-btn active" content-id="nails">
-                Manicure
-            </button>
-            
-            <button class="tab-btn" content-id="lash_brow">
-                Lash & Brow
-            </button>
 
+    <div class="services-header">
+        <h2>Serviços</h2>
+        <p>Conheça as soluções que oferecemos.</p>
+    </div>
+
+    <div class="service-container">
+
+        <div class="tab-buttons">
+            {% for category in categories %}
+                <button
+                    class="tab-btn{% if forloop.first %} active{% endif %}"
+                    data-category="{{ category.slug }}"
+                >
+                    {{ category.name }}
+                </button>
+            {% endfor %}
         </div>
 
         <div class="tab-contents">
-            <div class="content show" id="nails">
-                <div class="services-grid">
+            {% for category in categories %}
+                <div
+                    class="content{% if forloop.first %} show{% endif %}"
+                    data-category="{{ category.slug }}"
+                >
+                    <div class="services-grid">
 
-                    {% for service in services %}
+                        {% for service in services %}
+                            {% if service.category == category %}
+                                {% include "main/partials/service_card.html" %}
+                            {% endif %}
+                        {% endfor %}
 
-                        {% if service.category.slug == "nails" %}
-
-                            {% include "main/partials/service_card.html"%}
-
-                        {% endif %}        
-
-                    {% endfor %}
-
+                    </div>
                 </div>
-            </div>
-
-            <div class="content" id="lash_brow">
-                <div class="services-grid">
-
-                    {% for service in services %}
-
-                        {% if service.category.slug == "lash_brow" %}
-
-                            {% include "main/partials/service_card.html"%}
-
-                        {% endif %}         
-
-                    {% endfor %}
-
-                </div>
-            </div>
-
+            {% endfor %}
         </div>
-        
+
     </div>
+
 </section>

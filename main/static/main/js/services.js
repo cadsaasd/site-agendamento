@@ -1,8 +1,14 @@
 const tabs = document.querySelectorAll('.tab-btn');
 
-tabs.forEach(tab => 
+tabs.forEach(tab =>
     tab.addEventListener('click', () => tabClicked(tab))
 );
+
+const firstTab = tabs[0];
+
+if (firstTab) {
+    firstTab.classList.add('active');
+}
 
 const tabClicked = (tab) => {
 
@@ -12,8 +18,8 @@ const tabClicked = (tab) => {
     contents.forEach(content => content.classList.remove('show'));
     tabs.forEach(tab => tab.classList.remove('active'));
 
-    const contentId = tab.getAttribute('content-id');
-    const content = document.getElementById(contentId);
+    const category = tab.dataset.category;
+    const content = document.querySelector(`.content[data-category="${category}"]`);
 
     content.classList.add('show');
     tab.classList.add('active');
