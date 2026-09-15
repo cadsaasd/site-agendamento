@@ -6,6 +6,7 @@ const nextBtns = document.querySelectorAll('.next-btn')
 const backBtns = document.querySelectorAll('.back-btn')
 const photoIndicator = document.querySelector('.photo-indicator')
 const lastStep = document.querySelector('.last-step')
+const lines = document.querySelectorAll('.line')
 const lastLine = document.querySelector('.last-line')
 const serviceName = document.querySelector('.service-name')
 const serviceStep = document.querySelector('.service-step')
@@ -66,7 +67,9 @@ serviceBtns.forEach((serviceButton) => {
 
 function updateStepIndicator() {
 
-    if (appointment.getCurrentStep() === 0) {
+    const currentStep = appointment.getCurrentStep()
+
+    if (currentStep === 0) {
         allSteps.style.display = 'none'
     } else {
         allSteps.style.display = 'flex'
@@ -74,9 +77,9 @@ function updateStepIndicator() {
 
     steps.forEach((indicatorStep) => {
 
-        const indicatorStepNumber = Number(indicatorStep.dataset.step)
+        const stepNumber = Number(indicatorStep.dataset.step)
 
-        if (indicatorStepNumber <= appointment.getCurrentStep()) {
+        if (stepNumber <= currentStep) {
             indicatorStep.classList.add('active')
         } else {
             indicatorStep.classList.remove('active')
@@ -84,6 +87,17 @@ function updateStepIndicator() {
 
     })
 
+    lines.forEach((indicatorLine) => {
+
+        const lineNumber = Number(indicatorLine.dataset.step)
+
+        if (lineNumber <= currentStep) {
+            indicatorLine.classList.add('active')
+        } else {
+            indicatorLine.classList.remove('active')
+        }
+
+    })
 }
 
 function backStep() {

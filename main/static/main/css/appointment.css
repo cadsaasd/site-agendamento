@@ -57,6 +57,10 @@ h3 {
     box-sizing: border-box;
 }
 
+.appointment-content {
+    width: 100%;
+}
+
 .steps {
     display: none;
     align-items: center;
@@ -92,6 +96,15 @@ h3 {
     background: var(--off-white);
     color: var(--primary-300);
     font-family: var(--font-body);
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+.step.active span,
+.step.selected span {
+    background: var(--primary-300);
+    color: var(--off-white);
 }
 
 .step p {
@@ -102,12 +115,6 @@ h3 {
     white-space: nowrap;
 }
 
-.step.active span,
-.step.selected span {
-    background: var(--primary-300);
-    color: var(--off-white);
-}
-
 .step.active p,
 .step.selected p {
     color: var(--primary-300);
@@ -115,11 +122,30 @@ h3 {
 }
 
 .line {
+    position: relative;
     flex: 0 1 60px;
     width: 60px;
     min-width: 20px;
     height: 2px;
-    background: #eadde5;
+    background: var(--off-white);
+    overflow: hidden;
+}
+
+.line::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-300);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.line.active::after {
+    transform: scaleX(1);
 }
 
 .appointment-step {
@@ -134,6 +160,32 @@ h3 {
     flex-direction: column;
     flex: 1;
     min-width: 0;
+    animation: showAppointmentStep 0.25s ease;
+}
+
+@keyframes showAppointmentStep {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.appointment-step h2 {
+    margin: 0 0 1.5rem;
+    color: var(--primary-300);
+    font-size: 1.5rem;
+    line-height: 1.3;
+    text-align: center;
+    font-family: var(--font-heading);
+    font-weight: 400;
+}
+
+.appointment-step h3 {
+    font-size: 1.5rem;
+    color: var(--primary-300);
 }
 
 .back-next-step-btn {
@@ -141,10 +193,9 @@ h3 {
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    width: calc(100% + 4rem);
-    margin: 0 -2rem;
-    padding: 1.5rem 1.5rem 0;
+    width: 100%;
     box-sizing: border-box;
+    padding: 1rem;
 }
 
 .back-next-step-btn button {
@@ -169,7 +220,7 @@ h3 {
 @keyframes showNextBtn {
     from {
         opacity: 0;
-        transform: translateY(8px);
+        transform: translateY(0px);
     }
 
     to {
@@ -201,7 +252,8 @@ h3 {
     background-color: #a3718b;
 }
 
-/* CATEGORY STEP */
+
+/* Step de categoria */
 
 .appointment-step.category-step {
     width: 100%;
@@ -219,12 +271,6 @@ h3 {
 .appointment-step.category-step.active {
     display: flex;
     flex-direction: column;
-}
-
-.appointment-step.category-step h3 {
-    margin: 0 0 1.5rem;
-    font-size: 1.5rem;
-    color: var(--primary-400);
 }
 
 .category-buttons {
@@ -253,7 +299,8 @@ h3 {
     color: var(--primary-400);
 }
 
-/* SERVICE STEP */
+
+/* Step de serviço */
 
 .appointment-step.service-step {
     width: 100%;
@@ -307,7 +354,8 @@ h3 {
     border: 1.5px solid var(--primary-400);
 }
 
-/* DATE STEP */
+
+/* Step de data e horário */
 
 .date-step-content {
     display: flex;
@@ -324,33 +372,19 @@ h3 {
     min-width: 0;
 }
 
-.date-step .back-next-step-btn {
-    max-width: none;  
-    margin: 0;        
-    padding-top: 1.5rem;
-}
-
 .date-step h3 {
+    margin: 0;
     text-align: center;
-}
-
-.date-step-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    flex: 1;
-    min-width: 0;
 }
 
 .calendar-container {
     display: flex;
     justify-content: center;
     width: 100%;
-    margin: 2rem 0 1.5rem;
+    margin: 0.75rem 0 1.5rem;
 }
 
-.date-input{
+.date-input {
     width: 500px;
     max-width: 500px;
     height: 52px;
@@ -365,7 +399,7 @@ h3 {
     align-items: center;
 }
 
-.date-input:focus-within{
+.date-input:focus-within {
     box-shadow: 1px 2px 10px 0px var(--primary-300);
 }
 
@@ -383,7 +417,7 @@ h3 {
     outline: none;
 }
 
-.appointment-date-visible:hover{
+.appointment-date-visible:hover {
     cursor: pointer;
 }
 
@@ -401,7 +435,23 @@ h3 {
     box-sizing: border-box;
 }
 
-/* CALENDAR */
+
+/* Step de confirmação */
+
+.confirm-step {
+    width: 100%;
+}
+
+.confirm-step .back-next-step-btn {
+    align-items: center;
+}
+
+.comfirm-step-infos {
+    flex: 1;
+}
+
+
+/* Flatpickr */
 
 .flatpickr-calendar {
     width: 100%;
@@ -445,6 +495,7 @@ h3 {
 .flatpickr-days {
     background-color: var(--off-white);
     border-radius: 5px 10px 5px 10px;
+    width: 100%;
 }
 
 .flatpickr-prev-month,
@@ -505,10 +556,6 @@ span.flatpickr-weekday {
     font-weight: 700;
 }
 
-.flatpickr-days {
-    width: 100%;
-}
-
 .dayContainer {
     width: 100%;
     min-width: 100%;
@@ -539,7 +586,6 @@ span.flatpickr-weekday {
     height: 2px;
     background: var(--primary-300);
     border-radius: 50px;
-    
     opacity: 0;
     transition: opacity 0.2s ease;
 }
@@ -570,7 +616,7 @@ span.flatpickr-weekday {
 .flatpickr-day.prevMonthDay.selected,
 .flatpickr-day.nextMonthDay.selected {
     background: transparent !important;
-    border: none    ;
+    border: none;
     color: var(--primary-300) !important;
     transform: scale(0.95);
 }
@@ -600,8 +646,8 @@ span.flatpickr-day.prevMonthDay.flatpickr-disabled {
 
 .date-step .back-next-step-btn {
     width: 100%;
-    max-width: 420px;
-    margin: 0 auto;
+    max-width: none;
+    margin: 0;
     padding-top: 1.5rem;
 }
 
@@ -609,19 +655,11 @@ span.flatpickr-day.prevMonthDay.flatpickr-disabled {
     min-width: 120px;
 }
 
-.confirm-step {
-    width: 100%;
-}
 
-.confirm-step .back-next-step-btn {
-    align-items: center;
-}
-
-.comfirm-step-infos {
-    flex: 1;
-}
+/* Responsividade */
 
 @media (max-width: 768px) {
+
     .appointment {
         padding: 4.5rem 0;
     }
@@ -675,6 +713,12 @@ span.flatpickr-day.prevMonthDay.flatpickr-disabled {
         height: 2px;
     }
 
+    .appointment-step h2 {
+        margin-bottom: 1.25rem;
+        font-size: 1.35rem;
+        line-height: 1.35;
+    }
+
     .appointment-step.category-step {
         min-height: 230px;
     }
@@ -720,9 +764,9 @@ span.flatpickr-day.prevMonthDay.flatpickr-disabled {
     }
 
     .back-next-step-btn {
-        width: calc(100% + 3rem);
-        margin: 0 -1.5rem;
-        padding: 2rem 1rem 0;
+        width: 100%;
+        margin: 0;
+        padding: 2rem 0 0;
     }
 
     .back-next-step-btn button {
@@ -732,10 +776,16 @@ span.flatpickr-day.prevMonthDay.flatpickr-disabled {
         font-size: 0.9rem;
     }
 
+    .date-step h3 {
+        font-size: 1.35rem;
+        line-height: 1.35;
+    }
+
     .calendar-container {
         width: 100%;
-        margin: 1.5rem 0 1rem;
-        padding: 0;
+        margin: 0.75rem 0 1rem;
+        padding: 0 0.75rem;
+        box-sizing: border-box;
     }
 
     #appointment-date {
@@ -752,8 +802,10 @@ span.flatpickr-day.prevMonthDay.flatpickr-disabled {
     }
 
     .flatpickr-calendar {
-        max-width: 100%;
+        width: 100%;
+        max-width: 420px;
         padding: 0.75rem;
+        box-sizing: border-box;
     }
 
     .flatpickr-day {
@@ -779,6 +831,7 @@ span.flatpickr-day.prevMonthDay.flatpickr-disabled {
 }
 
 @media (max-width: 480px) {
+
     .appointment {
         padding: 3.5rem 0;
     }
@@ -831,6 +884,12 @@ span.flatpickr-day.prevMonthDay.flatpickr-disabled {
     .line {
         min-width: 12px;
         height: 1.5px;
+    }
+
+    .appointment-step h2 {
+        margin-bottom: 1.1rem;
+        font-size: 1.15rem;
+        line-height: 1.35;
     }
 
     .appointment-step.category-step {
@@ -892,9 +951,9 @@ span.flatpickr-day.prevMonthDay.flatpickr-disabled {
     }
 
     .back-next-step-btn {
-        width: calc(100% + 2rem);
-        margin: 0 -1rem;
-        padding: 1.35rem 0.6rem 0;
+        width: 100%;
+        margin: 0;
+        padding: 1.35rem 0 0;
     }
 
     .back-next-step-btn button {
@@ -904,9 +963,26 @@ span.flatpickr-day.prevMonthDay.flatpickr-disabled {
         font-size: 0.8rem;
     }
 
+    .date-step h3 {
+        font-size: 1.15rem;
+        line-height: 1.3;
+    }
+
     .calendar-container {
         width: 100%;
+        margin: 0.5rem 0 1rem;
         padding: 0;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .flatpickr-calendar {
+        width: 100%;
+        max-width: 380px;
+        margin: auto;
+        box-sizing: border-box;
     }
 
     #appointment-date {
@@ -918,11 +994,6 @@ span.flatpickr-day.prevMonthDay.flatpickr-disabled {
         width: 100%;
         min-height: 150px;
         padding: 0.85rem;
-    }
-
-    .flatpickr-calendar {
-        border-radius: 14px;
-        padding: 0.5rem;
     }
 
     .flatpickr-day {
@@ -945,9 +1016,23 @@ span.flatpickr-day.prevMonthDay.flatpickr-disabled {
 }
 
 @media (max-width: 360px) {
+
     .appointment-container {
         width: calc(100% - 1rem);
         padding: 0.85rem;
+    }
+
+    .calendar-container {
+        width: 100%;
+        margin: 0.5rem 0 1rem;
+        padding: 0 0.5rem;
+        box-sizing: border-box;
+    }
+
+    .flatpickr-calendar {
+        width: 100%;
+        max-width: 340px;
+        box-sizing: border-box;
     }
 
     .steps {
