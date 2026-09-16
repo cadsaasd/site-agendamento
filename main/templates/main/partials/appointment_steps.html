@@ -54,12 +54,25 @@
 </div>
 
 <div class="appointment-step photo-step" data-step='3'>
+    <div class="photo-step-content">
+        <h3>Escolha uma foto de inspiração</h3>
+        <div class="photo-content">
+           <label for="photo-input">
+                <i class="fa-regular fa-image photo-placeholder-icon"></i>
+                <span class="photo-placeholder-text">
+                    Nenhuma imagem selecionada
+                </span>
+                <img id="preview-img" class="preview-img" alt="">
+            </label>
+            <input type="file" name="photo" id="photo-input" accept="image/*">     
+        </div>
+    </div>
     <div class="back-next-step-btn">
         <button class="back-btn appointment-step-btn">
             Voltar
         </button>
-        <button class="next-btn appointment-step-btn">
-            Continuar
+        <button class="next-btn appointment-step-btn" id="photo-next-btn">
+            Pular
         </button>
     </div>
 </div>

@@ -11,6 +11,24 @@ const lastLine = document.querySelector('.last-line')
 const serviceName = document.querySelector('.service-name')
 const serviceStep = document.querySelector('.service-step')
 const serviceNextBtn = serviceStep ? serviceStep.querySelector('.next-btn') : null
+const photoInput = document.querySelector('#photo-input')
+const previewImg = document.querySelector('.preview-img')
+const photoPlaceholderIcon = document.querySelector('.photo-placeholder-icon')
+const photoPlaceholderText = document.querySelector('.photo-placeholder-text')
+const photoNextBtn = document.querySelector('#photo-next-btn')
+
+function preview({target}){
+    if(target.files[0]){
+        previewImg.src = URL.createObjectURL(target.files[0])
+        previewImg.style.display = 'block'
+        photoNextBtn.innerText = 'Continuar'
+
+        photoPlaceholderIcon.style.display = 'none'
+        photoPlaceholderText.style.display = 'none'
+    }
+}
+
+photoInput.addEventListener('change', preview)
 
 serviceNextBtn.style.display = 'none'
 
