@@ -1,6 +1,4 @@
-/* ==============================
-   Container de autenticação
-   ============================== */
+/* Generic styles */
 
 body {
     display: flex;
@@ -22,11 +20,6 @@ body {
     animation: slideInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) both;
 }
 
-
-/* ==============================
-   Cabeçalho do login
-   ============================== */
-
 .login-header {
     margin-bottom: 2rem;
     text-align: center;
@@ -42,11 +35,6 @@ body {
     color: var(--primary-300);
     font-family: var(--font-body);
 }
-
-
-/* ==============================
-   Formulário
-   ============================== */
 
 .form-group {
     position: relative;
@@ -120,33 +108,47 @@ body {
     font-size: 1rem;
     transform: translateY(-50%);
 }
-
-
-/* ==============================
-   Botão
-   ============================== */
-
-.btn-content {
+.button-content {
     margin-top: 2rem;
 }
 
-.btn {
+.btn,
+.button-content button {
     width: 100%;
     display: inline-flex;
     padding: clamp(0.75rem, 1vw, 0.95rem);
+    font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+    font-family: var(--font-body);
+    font-weight: 600;
     color: var(--off-white);
     background: var(--primary-300);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.18s ease, transform 0.12s ease, box-shadow 0.12s ease;
 }
 
-.btn:hover{
+.btn:hover,
+.button-content button:hover {
     color: var(--off-white);
     background: #a3718b;
+    transform: translateY(-1px);
 }
 
-/* ==============================
-   OTP
-   ============================== */
+.btn:active,
+.button-content button:active {
+    transform: translateY(0);
+}
 
+.btn:focus-visible,
+.button-content button:focus-visible {
+    outline: 3px solid rgba(163,113,139,0.18);
+    outline-offset: 2px;
+}
+
+/* Page-specific styles */
 .otp-container {
     display: flex;
     align-items: center;
@@ -159,7 +161,7 @@ body {
     height: 60px;
     color: var(--primary-300);
     background: transparent;
-    border: 2px solid var(--primary-200);
+    border: 1px solid var(--primary-300);
     border-radius: 8px;
     outline: none;
     text-align: center;
@@ -171,10 +173,12 @@ body {
     color: #a68597cb;
 }
 
+.otpInput:focus {
+    border-color: var(--primary-300);
+    box-shadow: 0 0 10px 3px var(--shadow-soft);
+}
 
-/* ==============================
-   Footer
-   ============================== */
+/* footer */
 
 .footer-content {
     padding: 1rem;
@@ -190,15 +194,14 @@ body {
     text-decoration: none;
 }
 
-.footer-content a:hover {
-    text-decoration: underline;
-}
+.footer-content a:hover { text-decoration: underline; }
+
+.auth-footer { margin-top: 1.5rem; text-align: center; color: var(--primary-300); font-family: var(--font-body); font-size: 0.9rem; }
+.auth-footer a { color: var(--primary-300); text-decoration: none; font-weight: 600; margin-left: 0.4rem; }
+.auth-footer a:hover, .auth-footer a:focus-visible { text-decoration: underline; outline: none; }
 
 
-/* ==============================
-   Animações
-   ============================== */
-
+ 
 @keyframes slideInUp {
     from {
         opacity: 0;
@@ -212,10 +215,7 @@ body {
 }
 
 
-/* ==============================
-   Media Queries
-   ============================== */
-
+ 
 @media (max-width: 480px) {
     .main-content {
         width: 100%;
