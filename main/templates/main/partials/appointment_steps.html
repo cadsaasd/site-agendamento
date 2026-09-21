@@ -1,5 +1,6 @@
 <div class="appointment-step category-step active" data-step='0'>
     <h3>Como podemos cuidar de você hoje?</h3>
+    <p class="step-description">Selecione a categoria que melhor atende à sua necessidade.</p>
     <div class="category-buttons">
         {% for category in categories %}
             <button class="category-btn btn" data-category-id="{{ category.id }}">
@@ -11,7 +12,7 @@
 
 <div class="appointment-step service-step" data-step='1'>
     <h3>Escolha o serviço</h3>
-    <p>Selecione o serviço que deseja realizar.</p>
+    <p class="step-description">Selecione o serviço que deseja realizar.</p>
     <div class="services-btns">
         {% for service in services %}
         <button class="appointment-service-btn appointment-step-btn"
@@ -35,6 +36,7 @@
 <div class="appointment-step date-step" data-step='2'>
     <div class="date-step-content">
         <h3>Escolha a data</h3>
+        <p class="step-description">Escolha a data e horário que funcionam melhor para você.</p>
         <div class="calendar-container">
             <div class="date-input">
                 <input class="appointment-date-visible" type="text" id="appointment-date" placeholder="Selecione uma data">
@@ -57,6 +59,7 @@
 <div class="appointment-step photo-step" data-step='3'>
     <div class="photo-step-content">
         <h3>Escolha uma foto de inspiração</h3>
+        <p class="step-description">Envie uma imagem para nos mostrar a inspiração desejada.</p>
         <div class="photo-content">
            <label for="photo-input">
                 <i class="fa-regular fa-image photo-placeholder-icon"></i>
@@ -86,7 +89,7 @@
     <div class="confirm-step-content">
         <div class="confirm-step-heading">
             <h3>Confirme seu agendamento</h3>
-            <p>Revise os detalhes antes de confirmar.</p>
+            <p class="step-description">Revise os detalhes antes de confirmar.</p>
         </div>
 
         <div class="confirm-step-infos">
