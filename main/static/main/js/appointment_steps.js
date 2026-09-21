@@ -20,6 +20,8 @@ const photoNextBtn = document.querySelector('#photo-next-btn')
 const confirmServiceName = document.querySelector('.service-name')
 const confirmDate = document.querySelector('.date')
 const confirmServicePrice = document.querySelector('.confirm-service-price')
+const confirmPhotoInfo = document.querySelector('.confirm-photo-info')
+const confirmPhotoStatus = document.querySelector('.photo-status')
 
 let serviceId = ''
 let serviceName = ''
@@ -151,6 +153,15 @@ function updateConfirmStep() {
     confirmServicePrice.textContent = Number.isNaN(price)
         ? servicePrice
         : price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+
+    const skipsPhotoStep = categoryId === '2'
+    confirmPhotoInfo.hidden = skipsPhotoStep
+
+    if (!skipsPhotoStep) {
+        confirmPhotoStatus.textContent = photoInput.files.length > 0
+            ? 'Enviada'
+            : 'Não enviada'
+    }
 }
 
 function backStep() {
