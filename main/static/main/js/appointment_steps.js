@@ -19,9 +19,11 @@ const photoPlaceholderText = document.querySelector('.photo-placeholder-text')
 const photoNextBtn = document.querySelector('#photo-next-btn')
 const confirmServiceName = document.querySelector('.service-name')
 const confirmDate = document.querySelector('.date')
+const confirmServicePrice = document.querySelector('.confirm-service-price')
 
 let serviceId = ''
 let serviceName = ''
+let servicePrice = ''
 
 function preview({target}){
     if(target.files[0]){
@@ -102,8 +104,11 @@ categoryBtns.forEach((button) => {
 
 serviceBtns.forEach((serviceButton) => {
     serviceButton.addEventListener('click', () => {
+        const selectedServicePrice = serviceButton.dataset.servicePrice
+
         serviceId = serviceButton.dataset.serviceId
         serviceName = serviceButton.textContent.trim()
+        servicePrice = selectedServicePrice
         setServiceNextVisible(true)
     })
 })
@@ -139,8 +144,13 @@ function updateStepIndicator() {
 function updateConfirmStep() {
     if (appointment.getCurrentStep() !== 4) return
 
+    const price = Number.parseFloat(servicePrice.replace(',', '.'))
+
     confirmServiceName.textContent = serviceName
     confirmDate.textContent = getFormattedSelectedDate()
+    confirmServicePrice.textContent = Number.isNaN(price)
+        ? servicePrice
+        : price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
 }
 
 function backStep() {

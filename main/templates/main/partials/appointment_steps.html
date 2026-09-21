@@ -16,7 +16,8 @@
         {% for service in services %}
         <button class="appointment-service-btn appointment-step-btn"
          data-category-id="{{ service.category.id }}"
-         data-service-id="{{ service.id }}">
+         data-service-id="{{ service.id }}"
+         data-service-price="{{ service.price }}">
             {{ service.name }}
         </button>
         {% endfor %}
@@ -98,6 +99,14 @@
                 <div>
                     <span>Data</span>
                     <p class="date"></p>
+                </div>
+            </div>
+
+            <div class="confirm-info">
+                <i class="fa-solid fa-tag" aria-hidden="true"></i>
+                <div>
+                    <span>Valor</span>
+                    <p class="confirm-service-price"></p>
                 </div>
             </div>
         </div>
