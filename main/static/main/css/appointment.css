@@ -526,7 +526,7 @@ h3 {
     padding: 1.25rem;
     border: 1px solid var(--primary-400);
     border-radius: 14px;
-    background-color: transparent;
+    background-color: var(--primary-300);
     text-align: left;
     box-sizing: border-box;
 }
@@ -535,7 +535,7 @@ h3 {
     display: none;
     max-width: 100%;
     padding: 0 1rem;
-    color: var(--primary-400);
+    color: var(--primary-100);
     font-family: var(--font-body);
     font-weight: 700;
     overflow: hidden;
@@ -553,8 +553,8 @@ h3 {
     place-items: center;
     border-radius: 50%;
     border: 1.5px solid var(--primary-400);
-    background-color: var(--primary-300);
-    color: var(--off-white);
+    background-color: var(--off-white);
+    color: var(--primary-300);
     font-size: 1.1rem;
 }
 
@@ -565,14 +565,14 @@ h3 {
 .confirm-info span {
     display: block;
     margin-bottom: 0.2rem;
-    color: var(--primary-300);
+    color: var(--primary-200);
     font-family: var(--font-body);
     font-size: 0.85rem;
 }
 
 .confirm-info p {
     margin: 0;
-    color: var(--primary-400);
+    color: var(--primary-100);
     font-family: var(--font-body);
     font-weight: 700;
     overflow-wrap: anywhere;
