@@ -254,7 +254,7 @@ h3 {
 }
 
 
-/* Step de categoria */
+/* Category step */
 
 .appointment-step.category-step {
     width: 100%;
@@ -301,7 +301,7 @@ h3 {
 }
 
 
-/* Step de serviço */
+/* Service step */
 
 .appointment-step.service-step {
     width: 100%;
@@ -356,7 +356,7 @@ h3 {
 }
 
 
-/* Step de data e horário */
+/* Date and time step */
 
 .date-step-content {
     display: flex;
@@ -436,7 +436,7 @@ h3 {
     box-sizing: border-box;
 }
 
-/* photo step */
+/* Photo step */
 .photo-step-content {
     min-height: 300px;
     display: flex;
@@ -510,7 +510,7 @@ h3 {
     background-color: var(--primary-300);
 }
 
-/* Step de confirmação */
+/* Confirmation step */
 
 .confirm-step {
     width: 100%;
@@ -598,18 +598,6 @@ h3 {
     font-weight: 700;
     overflow-wrap: anywhere;
 }
-
-@media (max-width: 500px) {
-    .confirm-step {
-        gap: 1.5rem;
-    }
-
-    .confirm-step-infos {
-        grid-template-columns: 1fr;
-    }
-
-}
-
 
 /* Flatpickr */
 
@@ -816,7 +804,7 @@ span.flatpickr-day.prevMonthDay.flatpickr-disabled {
 }
 
 
-/* Responsividade */
+/* Responsive styles */
 
 @media (max-width: 768px) {
 
@@ -1009,6 +997,16 @@ span.flatpickr-day.prevMonthDay.flatpickr-disabled {
 
     .date-step .back-next-step-btn button {
         min-width: 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .confirm-step {
+        gap: 1.5rem;
+    }
+
+    .confirm-step-infos {
+        grid-template-columns: 1fr;
     }
 }
 
