@@ -7,6 +7,10 @@ let selectedDate = null
 dateNextBtn.style.display = "none"
 timeContainer.style.display = "none"
 
+export function getSelectedDate() {
+    return selectedDate
+}
+
 export function getFormattedSelectedDate() {
     if (!selectedDate) return ''
 
@@ -81,6 +85,7 @@ const calendar = flatpickr(dateInput, {
             setDateNextVisible(true)
             selectedDate = selectedDates[0]
             timeContainer.style.display = "flex"
+
         } else {
             setDateNextVisible(false)
             timeContainer.style.display = "none"
