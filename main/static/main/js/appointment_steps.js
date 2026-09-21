@@ -108,11 +108,13 @@ categoryBtns.forEach((button) => {
         if (categoryId != 2) {
             if (photoIndicator) photoIndicator.style.display = 'flex'
             if (lastLine) lastLine.style.display = 'flex'
-            if (lastStep && lastStep.querySelector('span')) lastStep.querySelector('span').innerText = '4'
+            if (lastStep && lastStep.querySelector('span'))
+                 lastStep.querySelector('span').innerHTML = `<i class="fa-regular fa-calendar-check"></i>`
         } else {
             if (photoIndicator) photoIndicator.style.display = 'none'
             if (lastLine) lastLine.style.display = 'none'
-            if (lastStep && lastStep.querySelector('span')) lastStep.querySelector('span').innerText = '3'
+            if (lastStep && lastStep.querySelector('span'))
+                 lastStep.querySelector('span').innerHTML = `<i class="fa-regular fa-calendar-check"></i>`
         }
 
         serviceBtns.forEach((serviceButton) => {
