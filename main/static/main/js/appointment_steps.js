@@ -16,7 +16,9 @@ const photoInput = document.querySelector('#photo-input')
 const previewImg = document.querySelector('.preview-img')
 const photoPlaceholderIcon = document.querySelector('.photo-placeholder-icon')
 const photoPlaceholderText = document.querySelector('.photo-placeholder-text')
+const photoFileName = document.querySelector('.photo-file-name')
 const photoNextBtn = document.querySelector('#photo-next-btn')
+const removePhotoBtn = document.querySelector('.remove-photo-btn')
 const confirmServiceName = document.querySelector('.service-name')
 const confirmDate = document.querySelector('.date')
 const confirmServicePrice = document.querySelector('.confirm-service-price')
@@ -26,12 +28,19 @@ const confirmPhotoStatus = document.querySelector('.photo-status')
 let serviceId = ''
 let serviceName = ''
 let servicePrice = ''
+let previewUrl = ''
 
 function preview({target}){
     if(target.files[0]){
-        previewImg.src = URL.createObjectURL(target.files[0])
+        if (previewUrl) URL.revokeObjectURL(previewUrl)
+
+        previewUrl = URL.createObjectURL(target.files[0])
+        previewImg.src = previewUrl
         previewImg.style.display = 'block'
+        photoFileName.textContent = target.files[0].name
+        photoFileName.title = target.files[0].name
         photoNextBtn.innerText = 'Continuar'
+        removePhotoBtn.hidden = false
 
         photoPlaceholderIcon.style.display = 'none'
         photoPlaceholderText.style.display = 'none'
@@ -39,6 +48,21 @@ function preview({target}){
 }
 
 photoInput.addEventListener('change', preview)
+
+removePhotoBtn.addEventListener('click', () => {
+    if (previewUrl) URL.revokeObjectURL(previewUrl)
+
+    previewUrl = ''
+    photoInput.value = ''
+    previewImg.removeAttribute('src')
+    previewImg.style.display = 'none'
+    photoFileName.textContent = ''
+    photoFileName.removeAttribute('title')
+    photoPlaceholderIcon.style.display = ''
+    photoPlaceholderText.style.display = ''
+    photoNextBtn.innerText = 'Pular'
+    removePhotoBtn.hidden = true
+})
 
 serviceNextBtn.style.display = 'none'
 

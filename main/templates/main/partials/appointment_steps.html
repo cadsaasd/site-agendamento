@@ -63,9 +63,13 @@
                 <span class="photo-placeholder-text">
                     Nenhuma imagem selecionada
                 </span>
+                <span class="photo-file-name" aria-live="polite"></span>
                 <img id="preview-img" class="preview-img" alt="">
             </label>
-            <input type="file" name="photo" id="photo-input" accept="image/*">     
+            <input type="file" name="photo" id="photo-input" accept="image/*">
+            <button type="button" class="remove-photo-btn" hidden>
+                Remover foto
+            </button>
         </div>
     </div>
     <div class="back-next-step-btn">
