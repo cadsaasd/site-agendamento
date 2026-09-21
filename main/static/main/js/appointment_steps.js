@@ -1,3 +1,5 @@
+import { getFormattedSelectedDate } from './calendar.js'
+
 const categoryBtns = document.querySelectorAll('.category-btn')
 const serviceBtns = document.querySelectorAll('.appointment-service-btn')
 const steps = document.querySelectorAll('.step')
@@ -8,7 +10,6 @@ const photoIndicator = document.querySelector('.photo-indicator')
 const lastStep = document.querySelector('.last-step')
 const lines = document.querySelectorAll('.line')
 const lastLine = document.querySelector('.last-line')
-const serviceName = document.querySelector('.service-name')
 const serviceStep = document.querySelector('.service-step')
 const serviceNextBtn = serviceStep ? serviceStep.querySelector('.next-btn') : null
 const photoInput = document.querySelector('#photo-input')
@@ -16,6 +17,11 @@ const previewImg = document.querySelector('.preview-img')
 const photoPlaceholderIcon = document.querySelector('.photo-placeholder-icon')
 const photoPlaceholderText = document.querySelector('.photo-placeholder-text')
 const photoNextBtn = document.querySelector('#photo-next-btn')
+const confirmServiceName = document.querySelector('.service-name')
+const confirmDate = document.querySelector('.date')
+
+let serviceId = ''
+let serviceName = ''
 
 function preview({target}){
     if(target.files[0]){
@@ -96,9 +102,8 @@ categoryBtns.forEach((button) => {
 
 serviceBtns.forEach((serviceButton) => {
     serviceButton.addEventListener('click', () => {
-        const serviceId = serviceButton.dataset.serviceId
-        const name = serviceButton.textContent.trim()
-        serviceName.textContent = name
+        serviceId = serviceButton.dataset.serviceId
+        serviceName = serviceButton.textContent.trim()
         setServiceNextVisible(true)
     })
 })
@@ -131,6 +136,13 @@ function updateStepIndicator() {
     })
 }
 
+function updateConfirmStep() {
+    if (appointment.getCurrentStep() !== 4) return
+
+    confirmServiceName.textContent = serviceName
+    confirmDate.textContent = getFormattedSelectedDate()
+}
+
 function backStep() {
     setServiceNextVisible(false)
     if (categoryId === "2" && appointment.getCurrentStep() === 4) {
@@ -147,6 +159,7 @@ function nextStep() {
     } else {
         appointment.next()
     }
+    updateConfirmStep()
     updateStepIndicator()
 }
 

@@ -78,12 +78,37 @@
 </div>
 
 <div class="appointment-step confirm-step" data-step='4'>
-    <div class="back-next-step-btn">
-        <div class="comfirm-step-infos">
-            <p class="service-name"></p>           
+    <div class="confirm-step-content">
+        <div class="confirm-step-heading">
+            <h3>Confirme seu agendamento</h3>
+            <p>Revise os detalhes antes de confirmar.</p>
         </div>
+
+        <div class="confirm-step-infos">
+            <div class="confirm-info">
+                <i class="fa-solid fa-hand-sparkles"></i>
+                <div>
+                    <span>Serviço</span>
+                    <p class="service-name"></p>
+                </div>
+            </div>
+
+            <div class="confirm-info">
+                <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                <div>
+                    <span>Data</span>
+                    <p class="date"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="back-next-step-btn confirm-step-actions">
         <button class="back-btn appointment-step-btn">
             Voltar
+        </button>
+        <button class="next-btn confirm-btn appointment-step-btn">
+            Confirmar
         </button>
     </div>
 </div>

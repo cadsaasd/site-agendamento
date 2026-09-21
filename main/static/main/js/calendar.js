@@ -2,9 +2,20 @@ const dateInput = document.querySelector("#appointment-date")
 const dateNextBtn = document.querySelector("#date-next-btn")
 const timeContainer = document.querySelector('.time-slots-container')
 const backBtn = document.querySelector('#date-back-btn')
+let selectedDate = null
 
 dateNextBtn.style.display = "none"
 timeContainer.style.display = "none"
+
+export function getFormattedSelectedDate() {
+    if (!selectedDate) return ''
+
+    const d = selectedDate.getDate().toString().padStart(2, '0')
+    const m = (selectedDate.getMonth() + 1).toString().padStart(2, '0')
+    const y = selectedDate.getFullYear()
+
+    return `${d}/${m}/${y}`
+}
 
 function setDateNextVisible(visible) {
     if (!dateNextBtn) return
@@ -65,9 +76,10 @@ const calendar = flatpickr(dateInput, {
         }
     },
 
-    onChange: function(selectedDates, dateStr) {
+    onChange: function(selectedDates) {
         if (selectedDates.length > 0) {
             setDateNextVisible(true)
+            selectedDate = selectedDates[0]
             timeContainer.style.display = "flex"
         } else {
             setDateNextVisible(false)
