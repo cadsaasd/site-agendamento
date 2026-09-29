@@ -11,7 +11,7 @@
             {% for category in categories %}
                 <button
                     class="tab-btn{% if forloop.first %} active{% endif %}"
-                    data-category="{{ category.slug }}"
+                    data-category="{{ category.id }}"
                 >
                     {{ category.name }}
                 </button>
@@ -22,7 +22,7 @@
             {% for category in categories %}
                 <div
                     class="content{% if forloop.first %} show{% endif %}"
-                    data-category="{{ category.slug }}"
+                    data-category="{{ category.id }}"
                 >
                     <div class="services-grid">
 
