@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 class Category(models.Model):
     name = models.CharField(max_length=100)
@@ -7,6 +8,7 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+
 
 class Services(models.Model):
     name = models.CharField(max_length=100)
@@ -32,6 +34,7 @@ class Services(models.Model):
             return f"{hours}h"
         else:
             return f"{minutes}min"
+
 
 class LandingImages(models.Model):
     class Section(models.TextChoices):
