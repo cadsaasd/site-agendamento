@@ -1,0 +1,60 @@
+{
+  "editor.fontSize": 24,
+
+  "python.languageServer": "Pylance",
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true,
+  "python.testing.pytestArgs": [],
+  "python.testing.autoTestDiscoverOnSaveEnabled": true,
+
+  "python.defaultInterpreterPath": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.autopep8",
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": false,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  },
+
+  "[html]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "vscode.html-language-features",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": true,
+      "strings": true
+    }
+  },
+
+  "[django-html]": {
+    "editor.formatOnSave": false,
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": true,
+      "strings": true
+    }
+  },
+
+  "files.associations": {
+    "*.js": "javascript",
+    "*.jsx": "javascriptreact",
+    "*.xml": "html",
+    "*.svg": "html",
+    "*.html": "html",
+    "**/*.html": "html",
+    "django-html": "django-html",
+    "**/templates/**/*.html": "django-html",
+    "**/base_templates/**/*.html": "django-html",
+    "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+  },
+
+  "emmet.includeLanguages": {
+    "django-html": "html",
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  }
+}
