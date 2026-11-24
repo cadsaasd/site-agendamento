@@ -7,7 +7,7 @@ body {
 }
 
 .main-content {
-    width: clamp(340px, 32vw, 520px);
+    width: clamp(340px, 40vw, 640px);
     margin: 0 auto;
     padding: clamp(1.5rem, 2.5vw, 2.8rem);
     position: relative;
@@ -20,6 +20,18 @@ body {
     animation: slideInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) both;
 }
 
+.account-step {
+    display: none;
+}
+
+.account-step.active {
+    display: block;
+}
+
+.main-content.step-transition {
+    animation: accountContentIn 0.22s ease-out both;
+}
+
 .login-header {
     margin-bottom: 2rem;
     text-align: center;
@@ -27,7 +39,6 @@ body {
 
 .login-header h1 {
     margin-bottom: 0.5rem;
-    color: #73455eda;
     font-size: clamp(2.4rem, 3vw, 3.4rem);
 }
 
@@ -112,8 +123,12 @@ body {
     margin-top: 2rem;
 }
 
+.account-actions {
+    display: block;
+}
+
 .btn,
-.button-content button {
+.button-content button:not(.link-button) {
     width: 100%;
     display: inline-flex;
     padding: clamp(0.75rem, 1vw, 0.95rem);
@@ -131,21 +146,41 @@ body {
 }
 
 .btn:hover,
-.button-content button:hover {
+.button-content button:not(.link-button):hover {
     color: var(--off-white);
     background: #a3718b;
     transform: translateY(-1px);
 }
 
 .btn:active,
-.button-content button:active {
+.button-content button:not(.link-button):active {
     transform: translateY(0);
 }
 
 .btn:focus-visible,
-.button-content button:focus-visible {
+.button-content button:not(.link-button):focus-visible {
     outline: 3px solid rgba(163,113,139,0.18);
     outline-offset: 2px;
+}
+
+.button-content button.account-back-btn {
+    position: absolute;
+    top: 1.25rem;
+    left: 1.25rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0;
+    color: var(--primary-300);
+    background: transparent;
+    border: 1.5px solid var(--primary-300);
+    border-radius: 50%;
+    opacity: 0.65;
+}
+
+.button-content button.account-back-btn:hover {
+    color: var(--off-white);
+    background: var(--primary-300);
+    opacity: 1;
 }
 
 /* Page-specific styles */
@@ -200,12 +235,38 @@ body {
 .auth-footer a { color: var(--primary-300); text-decoration: none; font-weight: 600; margin-left: 0.4rem; }
 .auth-footer a:hover, .auth-footer a:focus-visible { text-decoration: underline; outline: none; }
 
+.link-button {
+    padding: 0;
+    color: var(--primary-300);
+    background: none;
+    border: 0;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.link-button:hover,
+.link-button:focus-visible {
+    text-decoration: underline;
+}
+
 
  
 @keyframes slideInUp {
     from {
         opacity: 0;
         transform: translateY(80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes accountContentIn {
+    from {
+        transform: translateY(24px);
     }
 
     to {

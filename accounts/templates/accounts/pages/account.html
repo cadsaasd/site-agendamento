@@ -1,0 +1,21 @@
+{% extends "global/base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'accounts/css/styles.css' %}">
+{% endblock extra_css %}
+
+{% block title %}Acessar conta{% endblock title %}
+
+{% block content %}
+<main class="main-content" aria-live="polite">
+    {% include "accounts/partials/number_step.html" %}
+    {% include "accounts/partials/otp_step.html" %}
+    {% include "accounts/partials/register_step.html" %}
+</main>
+{% endblock content %}
+
+{% block extra_js %}
+    <script src="{% static 'global/js/steps.js' %}" defer></script>
+    <script src="{% static 'accounts/js/account_steps.js' %}" defer></script>
+{% endblock extra_js %}

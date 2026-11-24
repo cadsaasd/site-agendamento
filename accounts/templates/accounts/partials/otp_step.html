@@ -1,0 +1,23 @@
+<section class="account-step" data-step="1" aria-labelledby="otp-title" hidden>
+    <header class="login-header">
+        <h1 id="otp-title">Digite o código</h1>
+        <p>Enviamos um código para o seu WhatsApp <strong class="masked-phone-number"></strong></p>
+    </header>
+    <div class="form-group">
+        <div class="otp-container" aria-label="Código de verificação">
+            <input type="text" class="otpInput" inputmode="numeric" maxlength="1" aria-label="Dígito 1" placeholder="0" required>
+            <input type="text" class="otpInput" inputmode="numeric" maxlength="1" aria-label="Dígito 2" placeholder="0" required>
+            <input type="text" class="otpInput" inputmode="numeric" maxlength="1" aria-label="Dígito 3" placeholder="0" required>
+            <input type="text" class="otpInput" inputmode="numeric" maxlength="1" aria-label="Dígito 4" placeholder="0" required>
+        </div>
+    </div>
+    <div class="button-content account-actions">
+        <button class="btn account-back-btn" type="button" aria-label="Voltar" title="Voltar">
+            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+        </button>
+        <button class="btn auth-next-btn" type="button">Confirmar código</button>
+    </div>
+    <div class="auth-footer">
+        <p>Não recebeu o código? <button class="link-button" type="button">Reenviar código</button></p>
+    </div>
+</section>
