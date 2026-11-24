@@ -1,37 +1,47 @@
+
 function createSteps(selector) {
     const stepElements = document.querySelectorAll(selector)
     let currentStep = 0
 
     function showStep() {
         stepElements.forEach((step) => {
-            const stepNumber = Number(step.dataset.step)
+            const isCurrentStep = Number(step.dataset.step) === currentStep
 
-            if (stepNumber === currentStep) {
-                step.classList.add('active')
-            } else {
-                step.classList.remove('active')
-            }
+            step.classList.toggle('active', isCurrentStep)
+            step.hidden = !isCurrentStep
         })
     }
 
     function next() {
-        currentStep++
-        showStep()
+        if (currentStep < stepElements.length - 1) {
+            currentStep++
+            showStep()
+        }
     }
 
     function back() {
-        currentStep--
-        showStep()
+        if (currentStep > 0) {
+            currentStep--
+            showStep()
+        }
     }
 
     function goTo(stepNumber) {
-        currentStep = stepNumber
-        showStep()
+        if (
+            Number.isInteger(stepNumber) &&
+            stepNumber >= 0 &&
+            stepNumber < stepElements.length
+        ) {
+            currentStep = stepNumber
+            showStep()
+        }
     }
 
     function getCurrentStep() {
         return currentStep
     }
+
+    showStep()
 
     return {
         next,

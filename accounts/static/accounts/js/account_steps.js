@@ -1,6 +1,6 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     const account = createSteps('.account-step')
-    const steps = document.querySelectorAll('.account-step')
     const mainContent = document.querySelector('.main-content')
     const phoneInput = document.querySelector('#phone')
     const maskedPhoneNumber = document.querySelector('.masked-phone-number')
@@ -14,13 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         maskedPhoneNumber.textContent = `${visibleBeginning}${maskedMiddle}${visibleEnd}`
     }
 
-    function updateVisibility() {
-        const currentStep = account.getCurrentStep()
-
-        steps.forEach((step) => {
-            step.hidden = Number(step.dataset.step) !== currentStep
-        })
-
+    function animateTransition() {
         mainContent.classList.remove('step-transition')
         void mainContent.offsetWidth
         mainContent.classList.add('step-transition')
@@ -33,17 +27,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if ([...requiredFields].some((field) => !field.reportValidity())) return
 
-            if (Number(step.dataset.step) === 0) updateMaskedPhoneNumber()
+            if (Number(step.dataset.step) === 0) {
+                updateMaskedPhoneNumber()
+            }
 
             account.next()
-            updateVisibility()
+            animateTransition()
         })
     })
 
     document.querySelectorAll('.account-back-btn').forEach((button) => {
         button.addEventListener('click', () => {
             account.back()
-            updateVisibility()
+            animateTransition()
         })
     })
 })
