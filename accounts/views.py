@@ -1,14 +1,5 @@
-from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login as auth_login
-from django.contrib.auth.decorators import login_required
+from django.shortcuts import render
 
 
-def login_view(request):
-    return render(request, 'accounts/pages/login.html')
-
-
-def register_view(request):
-    return render(request, 'accounts/pages/register.html')
-
-def code_view(request):
-    return render(request, 'accounts/pages/otp.html')
+def account_view(request):
+    return render(request, 'accounts/pages/account.html')

@@ -1,13 +1,9 @@
-"""
-URL configuration for login app.
-"""
+"""URLs do fluxo de autenticação."""
 from django.urls import path
 from . import views
 
 app_name = 'accounts'
 
 urlpatterns = [
-    path('login/', views.login_view, name = 'login'),
-    path('cadastro/', views.register_view, name = 'register'),
-    path('codigo/', views.code_view, name = 'code'),
+    path('', views.account_view, name='account'),
 ]

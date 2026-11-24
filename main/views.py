@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from itertools import zip_longest
 
 from .models import Services, LandingImages, Category
 
@@ -21,9 +22,11 @@ def home(request):
 
     carousel_images = []
 
-    for nail, lash in zip(nails_images, lash_brow_images):
-        carousel_images.append(nail)
-        carousel_images.append(lash)
+    for nail, lash in zip_longest(nails_images, lash_brow_images):
+        if nail:
+            carousel_images.append(nail)
+        if lash:
+            carousel_images.append(lash)
 
     hero_image = LandingImages.objects.filter(
         section="hero",
